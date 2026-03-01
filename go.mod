@@ -1,4 +1,4 @@
-module github.com/minio/console
+module github.com/maaikelimper/wis2box-minio-console
 
 go 1.22
 

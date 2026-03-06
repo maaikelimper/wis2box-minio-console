@@ -17,7 +17,7 @@
 import React, { Fragment } from "react";
 import ModalWrapper from "../../../../Common/ModalWrapper/ModalWrapper";
 import PreviewFileContent from "./PreviewFileContent";
-import { ObjectPreviewIcon } from "mds";
+import { EyeIcon } from "mds";
 import { BucketObject } from "../../../../../../api/consoleApi";
 
 interface IPreviewFileProps {
@@ -40,7 +40,7 @@ const PreviewFileModal = ({
         title={`Preview - ${actualInfo?.name}`}
         onClose={onClosePreview}
         wideLimit={false}
-        titleIcon={<ObjectPreviewIcon />}
+        titleIcon={<EyeIcon />}
       >
         <PreviewFileContent bucketName={bucketName} actualInfo={actualInfo} />
       </ModalWrapper>

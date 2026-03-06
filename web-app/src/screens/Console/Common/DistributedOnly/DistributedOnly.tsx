@@ -28,7 +28,7 @@ const DistributedOnly = ({ iconComponent, entity }: IDistributedOnly) => {
       <Grid item xs={12}>
         <HelpBox
           title={`${entity} not available`}
-          iconComponent={iconComponent}
+          
           help={
             <Box
               sx={{

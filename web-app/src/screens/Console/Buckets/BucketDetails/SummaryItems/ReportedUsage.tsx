@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { ReportedUsageFullIcon, Box } from "mds";
+import { PieUsageIcon, Box } from "mds";
 import { niceBytes } from "../../../../../common/utils";
 
 const ReportedUsage = ({ bucketSize }: { bucketSize: string }) => {
@@ -31,7 +31,7 @@ const ReportedUsage = ({ bucketSize }: { bucketSize: string }) => {
         },
       }}
     >
-      <ReportedUsageFullIcon />
+      <PieUsageIcon />
 
       <Box
         sx={{

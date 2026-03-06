@@ -18,7 +18,7 @@ import React, { useEffect, useState } from "react";
 import get from "lodash/get";
 import {
   Box,
-  BucketReplicationIcon,
+  ActivityIcon,
   Button,
   FormLayout,
   Grid,
@@ -169,7 +169,7 @@ const AddReplicationModal = ({
         closeModalAndRefresh();
       }}
       title="Set Bucket Replication"
-      titleIcon={<BucketReplicationIcon />}
+      titleIcon={<ActivityIcon />}
     >
       <form
         noValidate
@@ -382,7 +382,7 @@ const AddReplicationModal = ({
             <Button
               id={"cancel"}
               type="button"
-              variant="regular"
+              
               disabled={addLoading}
               onClick={() => {
                 closeModalAndRefresh();
@@ -392,7 +392,7 @@ const AddReplicationModal = ({
             <Button
               id={"submit"}
               type="submit"
-              variant="callAction"
+              
               color="primary"
               disabled={addLoading}
               label={"Save"}

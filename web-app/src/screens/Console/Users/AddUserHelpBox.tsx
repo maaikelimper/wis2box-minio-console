@@ -17,9 +17,9 @@ import React from "react";
 
 import {
   Box,
-  ChangeAccessPolicyIcon,
-  GroupsIcon,
-  HelpIconFilled,
+  ActivityIcon,
+  GroupIcon,
+  InfoIcon,
   UsersIcon,
 } from "mds";
 
@@ -77,7 +77,7 @@ const AddUserHelpBox = () => {
           },
         }}
       >
-        <HelpIconFilled />
+        <InfoIcon />
         <div>Learn more about the Users feature</div>
       </Box>
       <Box sx={{ fontSize: "14px", marginBottom: "15px" }}>
@@ -100,9 +100,9 @@ const AddUserHelpBox = () => {
         }}
       >
         <FeatureItem icon={<UsersIcon />} description={`Create Users`} />
-        <FeatureItem icon={<GroupsIcon />} description={`Manage Groups`} />
+        <FeatureItem icon={<GroupIcon />} description={`Manage Groups`} />
         <FeatureItem
-          icon={<ChangeAccessPolicyIcon />}
+          icon={<ActivityIcon />}
           description={`Assign Policies`}
         />
       </Box>

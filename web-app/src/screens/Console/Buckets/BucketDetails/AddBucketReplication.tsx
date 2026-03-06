@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 import {
   BackLink,
   Box,
-  BucketReplicationIcon,
+  ActivityIcon,
   Button,
   FormLayout,
   Grid,
@@ -33,7 +33,7 @@ import { IAM_PAGES } from "../../../../common/SecureComponent/permissions";
 import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../../HelpMenu";
+//import HelpMenu from "../../HelpMenu";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
 import QueryMultiSelector from "screens/Console/Common/FormComponents/QueryMultiSelector/QueryMultiSelector";
@@ -178,15 +178,15 @@ const AddBucketReplication = () => {
             onClick={() => navigate(backLink)}
           />
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <FormLayout
           title="Add Replication Rule"
-          icon={<BucketReplicationIcon />}
+          icon={<ActivityIcon />}
           helpBox={
             <HelpBox
-              iconComponent={<BucketReplicationIcon />}
+              
               title="Bucket Replication Configuration"
               help={
                 <Fragment>
@@ -447,7 +447,7 @@ const AddBucketReplication = () => {
               <Button
                 id={"cancel"}
                 type="button"
-                variant="regular"
+                
                 disabled={addLoading}
                 onClick={() => {
                   navigate(backLink);
@@ -457,7 +457,7 @@ const AddBucketReplication = () => {
               <Button
                 id={"submit"}
                 type="submit"
-                variant="callAction"
+                
                 color="primary"
                 disabled={addLoading || !validated}
                 label={"Save"}

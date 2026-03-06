@@ -36,7 +36,7 @@ import {
 } from "../../../../../../common/SecureComponent/permissions";
 import { hasPermission } from "../../../../../../common/SecureComponent";
 import { downloadObject } from "../../../../ObjectBrowser/utils";
-import { DataTable, ItemActions } from "mds";
+import { DataTable, ItemActions, IColumns } from "mds";
 import { BucketObject } from "api/consoleApi";
 
 const ListObjectsTable = () => {
@@ -123,12 +123,11 @@ const ListObjectsTable = () => {
     }
     dispatch(setSelectedObjectView(idElement));
   };
-  const tableActions: ItemActions[] = [
+  const tableActions: ItemActions<BucketObjectItem>[] = [
     {
       type: "view",
       tooltip: "View",
-      onClick: openPath,
-      sendOnlyId: false,
+      onClick: openPath
     },
   ];
 
@@ -195,7 +194,11 @@ const ListObjectsTable = () => {
   return (
     <DataTable
       itemActions={tableActions}
-      columns={rewindEnabled ? rewindModeColumns : listModeColumns}
+      columns={
+        rewindEnabled
+          ? (rewindModeColumns as IColumns<BucketObjectItem>[])
+          : (listModeColumns as IColumns<BucketObjectItem>[])
+      }
       isLoading={requestInProgress}
       entityName="Objects"
       idField="name"

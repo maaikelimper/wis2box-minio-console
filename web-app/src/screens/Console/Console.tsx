@@ -63,26 +63,13 @@ const EventTypeSelector = React.lazy(
   () => import("./EventDestinations/EventTypeSelector"),
 );
 
-const ListTiersConfiguration = React.lazy(
-  () => import("./Configurations/TiersConfiguration/ListTiersConfiguration"),
-);
-const TierTypeSelector = React.lazy(
-  () => import("./Configurations/TiersConfiguration/TierTypeSelector"),
-);
-const AddTierConfiguration = React.lazy(
-  () => import("./Configurations/TiersConfiguration/AddTierConfiguration"),
-);
-
 const ErrorLogs = React.lazy(() => import("./Logs/ErrorLogs/ErrorLogs"));
 const LogsSearchMain = React.lazy(
   () => import("./Logs/LogSearch/LogsSearchMain"),
 );
 const GroupsDetails = React.lazy(() => import("./Groups/GroupsDetails"));
 
-const Tools = React.lazy(() => import("./Tools/Tools"));
 const IconsScreen = React.lazy(() => import("./Common/IconsScreen"));
-
-const Speedtest = React.lazy(() => import("./Speedtest/Speedtest"));
 
 const ObjectManager = React.lazy(
   () => import("./Common/ObjectManager/ObjectManager"),
@@ -101,7 +88,6 @@ const AddBucketReplication = React.lazy(
 const Policies = React.lazy(() => import("./Policies/Policies"));
 
 const AddPolicyScreen = React.lazy(() => import("./Policies/AddPolicyScreen"));
-const Dashboard = React.lazy(() => import("./Dashboard/Dashboard"));
 
 const Account = React.lazy(() => import("./Account/Account"));
 
@@ -117,29 +103,15 @@ const IDPOpenIDConfigurations = React.lazy(
 const AddIDPOpenIDConfiguration = React.lazy(
   () => import("./IDP/AddIDPOpenIDConfiguration"),
 );
-const IDPLDAPConfigurationDetails = React.lazy(
-  () => import("./IDP/LDAP/IDPLDAPConfigurationDetails"),
-);
 const IDPOpenIDConfigurationDetails = React.lazy(
   () => import("./IDP/IDPOpenIDConfigurationDetails"),
 );
 
-const License = React.lazy(() => import("./License/License"));
 const ConfigurationOptions = React.lazy(
   () => import("./Configurations/ConfigurationPanels/ConfigurationOptions"),
 );
 
 const AddGroupScreen = React.lazy(() => import("./Groups/AddGroupScreen"));
-const SiteReplication = React.lazy(
-  () => import("./Configurations/SiteReplication/SiteReplication"),
-);
-const SiteReplicationStatus = React.lazy(
-  () => import("./Configurations/SiteReplication/SiteReplicationStatus"),
-);
-
-const AddReplicationSites = React.lazy(
-  () => import("./Configurations/SiteReplication/AddReplicationSites"),
-);
 
 const KMSRoutes = React.lazy(() => import("./KMS/KMSRoutes"));
 
@@ -232,10 +204,6 @@ const Console = () => {
       forceDisplay: true,
     },
     {
-      component: Dashboard,
-      path: IAM_PAGES.DASHBOARD,
-    },
-    {
       component: Buckets,
       path: IAM_PAGES.ADD_BUCKETS,
       customPermissionFnc: () => {
@@ -284,10 +252,6 @@ const Console = () => {
       path: IAM_PAGES.TOOLS_WATCH,
     },
     {
-      component: Speedtest,
-      path: IAM_PAGES.TOOLS_SPEEDTEST,
-    },
-    {
       component: Users,
       path: IAM_PAGES.USERS,
       fsHidden: ldapIsEnabled,
@@ -321,10 +285,6 @@ const Console = () => {
       path: IAM_PAGES.POLICIES,
     },
     {
-      component: IDPLDAPConfigurationDetails,
-      path: IAM_PAGES.IDP_LDAP_CONFIGURATIONS,
-    },
-    {
       component: IDPOpenIDConfigurations,
       path: IAM_PAGES.IDP_OPENID_CONFIGURATIONS,
     },
@@ -353,10 +313,6 @@ const Console = () => {
       path: IAM_PAGES.TOOLS_AUDITLOGS,
     },
     {
-      component: Tools,
-      path: IAM_PAGES.TOOLS,
-    },
-    {
       component: ConfigurationOptions,
       path: IAM_PAGES.SETTINGS,
     },
@@ -373,32 +329,6 @@ const Console = () => {
       path: IAM_PAGES.EVENT_DESTINATIONS,
     },
     {
-      component: AddTierConfiguration,
-      path: IAM_PAGES.TIERS_ADD_SERVICE,
-      fsHidden: !distributedSetup,
-    },
-    {
-      component: TierTypeSelector,
-      path: IAM_PAGES.TIERS_ADD,
-      fsHidden: !distributedSetup,
-    },
-    {
-      component: ListTiersConfiguration,
-      path: IAM_PAGES.TIERS,
-    },
-    {
-      component: SiteReplication,
-      path: IAM_PAGES.SITE_REPLICATION,
-    },
-    {
-      component: SiteReplicationStatus,
-      path: IAM_PAGES.SITE_REPLICATION_STATUS,
-    },
-    {
-      component: AddReplicationSites,
-      path: IAM_PAGES.SITE_REPLICATION_ADD,
-    },
-    {
       component: Account,
       path: IAM_PAGES.ACCOUNT,
       forceDisplay: true,
@@ -408,11 +338,6 @@ const Console = () => {
       component: AccountCreate,
       path: IAM_PAGES.ACCOUNT_ADD,
       forceDisplay: true, // user has implicit access to service-accounts
-    },
-    {
-      component: License,
-      path: IAM_PAGES.LICENSE,
-      forceDisplay: true,
     },
     {
       component: KMSRoutes,
@@ -500,7 +425,7 @@ const Console = () => {
                         changes to take effect.{" "}
                         <Button
                           id={"restart-server"}
-                          variant="secondary"
+                          
                           onClick={() => {
                             restartServer();
                           }}

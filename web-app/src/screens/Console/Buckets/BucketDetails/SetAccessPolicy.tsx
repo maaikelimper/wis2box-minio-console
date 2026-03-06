@@ -21,7 +21,7 @@ import { errorToHandler } from "api/errors";
 import {
   Box,
   Button,
-  ChangeAccessPolicyIcon,
+  ActivityIcon,
   FormLayout,
   Grid,
   Select,
@@ -89,7 +89,7 @@ const SetAccessPolicy = ({
       onClose={() => {
         closeModalAndRefresh();
       }}
-      titleIcon={<ChangeAccessPolicyIcon />}
+      titleIcon={<ActivityIcon />}
     >
       <form
         noValidate
@@ -153,7 +153,7 @@ const SetAccessPolicy = ({
           <Button
             id={"cancel"}
             type="button"
-            variant="regular"
+            
             onClick={() => {
               closeModalAndRefresh();
             }}
@@ -163,7 +163,7 @@ const SetAccessPolicy = ({
           <Button
             id={"set"}
             type="submit"
-            variant="callAction"
+            
             disabled={
               addLoading || (accessPolicy === "CUSTOM" && !policyDefinition)
             }

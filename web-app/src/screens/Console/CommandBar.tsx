@@ -32,7 +32,7 @@ import {
 import { Action } from "kbar/lib/types";
 import { routesAsKbarActions } from "./kbar-actions";
 
-import { Box, MenuExpandedIcon } from "mds";
+import { Box, MenuIcon } from "mds";
 import { useSelector } from "react-redux";
 import { selFeatures } from "./consoleSlice";
 import { Bucket } from "../../api/consoleApi";
@@ -285,7 +285,7 @@ const ResultItem = React.forwardRef(
               },
             }}
           >
-            <MenuExpandedIcon />
+            <MenuIcon />
           </Box>
         </Box>
         {action.shortcut?.length ? (

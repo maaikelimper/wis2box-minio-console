@@ -24,11 +24,11 @@ import React, {
 } from "react";
 import get from "lodash/get";
 import {
-  AccessRuleIcon,
+  LockIcon,
   ActionsList,
   Badge,
   Box,
-  BucketsIcon,
+  BucketIcon,
   Button,
   Checkbox,
   DeleteIcon,
@@ -36,8 +36,8 @@ import {
   Grid,
   HistoryIcon,
   PageLayout,
-  PreviewIcon,
-  RefreshIcon,
+  EyeIcon,
+  RotateCWIcon,
   ScreenTitle,
   ShareIcon,
 } from "mds";
@@ -116,7 +116,7 @@ import withSuspense from "../../../../Common/Components/withSuspense";
 import UploadFilesButton from "../../UploadFilesButton";
 import DetailsListPanel from "./DetailsListPanel";
 import ObjectDetailPanel from "./ObjectDetailPanel";
-import VersionsNavigator from "../ObjectDetails/VersionsNavigator";
+
 import RenameLongFileName from "../../../../ObjectBrowser/RenameLongFilename";
 import TooltipWrapper from "../../../../Common/TooltipWrapper/TooltipWrapper";
 import ListObjectsTable from "./ListObjectsTable";
@@ -883,7 +883,7 @@ const ListObjects = () => {
       label: "Preview",
       disabled:
         selectedObjects.length !== 1 || !canPreviewFile || isSelObjectDelMarker,
-      icon: <PreviewIcon />,
+      icon: <EyeIcon />, 
       tooltip: canPreviewFile ? "Preview Selected File" : "Preview unavailable",
     },
     {
@@ -895,7 +895,7 @@ const ListObjects = () => {
         selectedObjects.length !== 1 ||
         !selectedObjects[0].endsWith("/") ||
         !canSetAnonymousAccess,
-      icon: <AccessRuleIcon />,
+      icon: <LockIcon />, 
       tooltip:
         selectedObjects.length === 1 && selectedObjects[0].endsWith("/")
           ? "Set Anonymous Access to this Folder"
@@ -994,7 +994,7 @@ const ListObjects = () => {
           <ScreenTitle
             icon={
               <span>
-                <BucketsIcon style={{ width: 30 }} />
+                <BucketIcon style={{ width: 30 }} />
               </span>
             }
             title={bucketName}
@@ -1071,20 +1071,6 @@ const ListObjects = () => {
                     <Button
                       id={"rewind-objects-list"}
                       label={"Rewind"}
-                      icon={
-                        <Badge color="alert" dotOnly invisible={!rewindEnabled}>
-                          <HistoryIcon
-                            style={{
-                              minWidth: 16,
-                              minHeight: 16,
-                              width: 16,
-                              height: 16,
-                              marginTop: -3,
-                            }}
-                          />
-                        </Badge>
-                      }
-                      variant={"regular"}
                       onClick={() => {
                         setRewindSelect(true);
                       }}
@@ -1096,8 +1082,8 @@ const ListObjects = () => {
                   <Button
                     id={"refresh-objects-list"}
                     label={"Refresh"}
-                    icon={<RefreshIcon />}
-                    variant={"regular"}
+                    icon={<RotateCWIcon />}
+                    
                     onClick={() => {
                       if (versionsMode) {
                         dispatch(setLoadingVersions(true));
@@ -1151,7 +1137,6 @@ const ListObjects = () => {
                 />
               </Fragment>
             }
-            bottomBorder={false}
           />
         </Box>
         <div
@@ -1172,17 +1157,7 @@ const ListObjects = () => {
               },
             }}
           >
-            {versionsMode ? (
-              <Fragment>
-                {selectedInternalPaths !== null && (
-                  <VersionsNavigator
-                    internalPaths={selectedInternalPaths}
-                    bucketName={bucketName}
-                  />
-                )}
-              </Fragment>
-            ) : (
-              <SecureComponent
+            <SecureComponent
                 scopes={[
                   IAM_SCOPES.S3_LIST_BUCKET,
                   IAM_SCOPES.S3_ALL_LIST_BUCKET,
@@ -1241,7 +1216,7 @@ const ListObjects = () => {
                   <ListObjectsTable />
                 </Grid>
               </SecureComponent>
-            )}
+
             {!anonymousMode && (
               <SecureComponent
                 scopes={[

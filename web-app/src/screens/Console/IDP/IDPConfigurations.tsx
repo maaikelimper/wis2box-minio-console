@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useEffect, useState } from "react";
-import { AddIcon, Button, PageLayout, RefreshIcon, Grid, DataTable } from "mds";
+import { ActivityIcon, Button, PageLayout, RotateCWIcon, Grid, DataTable } from "mds";
 import { useNavigate } from "react-router-dom";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
@@ -33,7 +33,7 @@ import { actionsTray } from "../Common/FormComponents/common/styleLibrary";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import DeleteIDPConfigurationModal from "./DeleteIDPConfigurationModal";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 type IDPConfigurationsProps = {
   idpType: string;
@@ -145,7 +145,7 @@ const IDPConfigurations = ({ idpType }: IDPConfigurationsProps) => {
       )}
       <PageHeaderWrapper
         label={`${idpType.toUpperCase()} Configurations`}
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <Grid container>
@@ -166,8 +166,8 @@ const IDPConfigurations = ({ idpType }: IDPConfigurationsProps) => {
               <TooltipWrapper tooltip={"Refresh"}>
                 <Button
                   id={"refresh-keys"}
-                  variant="regular"
-                  icon={<RefreshIcon />}
+                  
+                  icon={<RotateCWIcon />}
                   onClick={() => setLoading(true)}
                 />
               </TooltipWrapper>
@@ -182,7 +182,7 @@ const IDPConfigurations = ({ idpType }: IDPConfigurationsProps) => {
                   id={"create-idp"}
                   label={"Create Configuration"}
                   variant={"callAction"}
-                  icon={<AddIcon />}
+                  icon={<ActivityIcon />}
                   onClick={() =>
                     navigate(`/identity/idp/${idpType}/configurations/add-idp`)
                   }

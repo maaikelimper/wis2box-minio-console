@@ -18,14 +18,13 @@ import React, { Fragment, useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import {
-  ActionLink,
-  BucketsIcon,
   Button,
+  BucketIcon,
   DataTable,
   HelpBox,
   PageLayout,
   ProgressBar,
-  RefreshIcon,
+  RotateCWIcon,
   Grid,
   HelpTip,
 } from "mds";
@@ -50,7 +49,7 @@ import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { Bucket } from "../../../api/consoleApi";
 import { api } from "../../../api";
 import { errorToHandler } from "../../../api/errors";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { usageClarifyingContent } from "../Dashboard/BasicDashboard/ReportedUsage";
 
 const OBListBuckets = () => {
@@ -118,7 +117,7 @@ const OBListBuckets = () => {
   return (
     <Fragment>
       {!obOnly && (
-        <PageHeaderWrapper label={"Object Browser"} actions={<HelpMenu />} />
+        <PageHeaderWrapper label={"Object Browser"}  />
       )}
 
       <PageLayout>
@@ -158,8 +157,8 @@ const OBListBuckets = () => {
                 onClick={() => {
                   setLoading(true);
                 }}
-                icon={<RefreshIcon />}
-                variant={"regular"}
+                icon={<RotateCWIcon />}
+                
               />
             </TooltipWrapper>
           </Grid>
@@ -191,7 +190,7 @@ const OBListBuckets = () => {
                     elementKey: "name",
                     renderFunction: (label) => (
                       <div style={{ display: "flex" }}>
-                        <BucketsIcon
+                        <BucketIcon
                           style={{ width: 15, marginRight: 5, minWidth: 15 }}
                         />
                         <span
@@ -261,7 +260,7 @@ const OBListBuckets = () => {
               >
                 <Grid item xs={8}>
                   <HelpBox
-                    iconComponent={<BucketsIcon />}
+                    
                     title={"No Results"}
                     help={
                       <Fragment>
@@ -283,7 +282,7 @@ const OBListBuckets = () => {
               >
                 <Grid item xs={8}>
                   <HelpBox
-                    iconComponent={<BucketsIcon />}
+                    
                     title={"Buckets"}
                     help={
                       <Fragment>
@@ -312,13 +311,14 @@ const OBListBuckets = () => {
                         >
                           <br />
                           To get started,&nbsp;
-                          <ActionLink
+                          <Button
+                            id="create-bucket"
                             onClick={() => {
                               navigate(IAM_PAGES.ADD_BUCKETS);
                             }}
                           >
                             Create a Bucket.
-                          </ActionLink>
+                          </Button>
                         </SecureComponent>
                       </Fragment>
                     }

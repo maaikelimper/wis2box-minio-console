@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import { Action } from "kbar/lib/types";
-import { BucketsIcon } from "mds";
+import { BucketIcon } from "mds";
 import { validRoutes } from "./valid-routes";
 import { IAM_PAGES } from "../../common/SecureComponent/permissions";
 import { Bucket } from "../../api/consoleApi";
@@ -57,7 +57,7 @@ export const routesAsKbarActions = (
     name: "Create Bucket",
     section: "Buckets",
     perform: () => navigate(IAM_PAGES.ADD_BUCKETS),
-    icon: <BucketsIcon />,
+    icon: <BucketIcon />,
   };
   initialActions.push(a);
 
@@ -70,7 +70,7 @@ export const routesAsKbarActions = (
         perform: () => {
           navigate(`/browser/${buck.name}`);
         },
-        icon: <BucketsIcon />,
+        icon: <BucketIcon />,
       }),
     ]);
   }

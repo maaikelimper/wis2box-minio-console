@@ -17,14 +17,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  AddIcon,
+  ActivityIcon,
   BackLink,
   Box,
   Button,
   DataTable,
   Grid,
-  GroupsIcon,
-  IAMPoliciesIcon,
+  GroupIcon,
+  ShieldIcon,
   PageLayout,
   ScreenTitle,
   SectionTitle,
@@ -61,7 +61,7 @@ import AddGroupMember from "./AddGroupMember";
 import DeleteGroup from "./DeleteGroup";
 import SearchBox from "../Common/SearchBox";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 
 export const formatPolicy = (policy: string = ""): string[] => {
@@ -204,8 +204,8 @@ const GroupsDetails = () => {
                 <Button
                   id={"add-user-group"}
                   label={memberActionText}
-                  variant="callAction"
-                  icon={<AddIcon />}
+                  
+                  icon={<ActivityIcon />}
                   onClick={() => {
                     setUsersOpen(true);
                   }}
@@ -282,8 +282,8 @@ const GroupsDetails = () => {
               <Button
                 id={"set-policies"}
                 label={`Set Policies`}
-                variant="callAction"
-                icon={<IAMPoliciesIcon />}
+                
+                icon={<ShieldIcon />}
                 onClick={() => {
                   setPolicyOpen(true);
                 }}
@@ -379,14 +379,14 @@ const GroupsDetails = () => {
             />
           </Fragment>
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <Grid item xs={12}>
           <ScreenTitle
             icon={
               <Fragment>
-                <GroupsIcon width={40} />
+                <GroupIcon width={40} />
               </Fragment>
             }
             title={params.groupName || ""}
@@ -442,7 +442,7 @@ const GroupsDetails = () => {
                 <TooltipWrapper tooltip={"Delete Group"}>
                   <Button
                     id={"delete-user-group"}
-                    variant="secondary"
+                    
                     icon={<TrashIcon />}
                     onClick={() => {
                       setDeleteOpen(true);

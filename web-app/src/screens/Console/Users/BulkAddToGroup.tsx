@@ -16,7 +16,7 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  AddMembersToGroupIcon,
+  CirclePlusIcon,
   Button,
   FormLayout,
   Grid,
@@ -107,7 +107,7 @@ const BulkAddToGroup = ({
           ? "The selected users were added to the following groups."
           : "Add Users to Group"
       }
-      titleIcon={<AddMembersToGroupIcon />}
+      titleIcon={<CirclePlusIcon />}
     >
       {accepted ? (
         <React.Fragment>
@@ -140,7 +140,7 @@ const BulkAddToGroup = ({
             <Button
               id={"clear-bulk-add-group"}
               type="button"
-              variant="regular"
+              
               color="primary"
               onClick={resetForm}
               label={"Clear"}
@@ -148,7 +148,7 @@ const BulkAddToGroup = ({
             <Button
               id={"save-add-group"}
               type="submit"
-              variant="callAction"
+              
               disabled={saving || selectedGroups.length < 1}
               label={"Save"}
             />

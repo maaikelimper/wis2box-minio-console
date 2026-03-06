@@ -15,10 +15,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useEffect, useState } from "react";
-import { Button, ConfirmDeleteIcon, PageLayout, SectionTitle, Grid } from "mds";
+import { Button, DeleteIcon, PageLayout, SectionTitle, Grid } from "mds";
 import ConfirmDialog from "./ModalWrapper/ConfirmDialog";
 import PageHeaderWrapper from "./PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 
@@ -33,7 +33,7 @@ const ComponentsScreen = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Components"} actions={<HelpMenu />} />
+      <PageHeaderWrapper label={"Components"}  />
 
       <PageLayout>
         <Grid container>
@@ -47,7 +47,7 @@ const ComponentsScreen = () => {
             <Button
               id={"open-dialog-test"}
               type="button"
-              variant={"regular"}
+              
               onClick={() => {
                 setDialogOpen(true);
               }}
@@ -57,7 +57,7 @@ const ComponentsScreen = () => {
               title={`Delete Bucket`}
               confirmText={"Delete"}
               isOpen={dialogOpen}
-              titleIcon={<ConfirmDeleteIcon />}
+              titleIcon={<DeleteIcon />}
               isLoading={false}
               onConfirm={() => {
                 setDialogOpen(false);

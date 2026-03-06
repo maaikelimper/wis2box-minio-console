@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import React from "react";
 
-import { Box, GroupsIcon, HelpIconFilled, IAMPoliciesIcon } from "mds";
+import { Box, GroupIcon, InfoIcon, ShieldIcon } from "mds";
 
 const FeatureItem = ({
   icon,
@@ -71,7 +71,7 @@ const AddGroupHelpBox = () => {
           },
         }}
       >
-        <HelpIconFilled />
+        <InfoIcon />
         <div>Learn more about Groups</div>
       </Box>
       <Box sx={{ fontSize: "14px", marginBottom: "15px" }}>
@@ -96,14 +96,14 @@ const AddGroupHelpBox = () => {
           flexFlow: "column",
         }}
       >
-        <FeatureItem icon={<GroupsIcon />} description={`Add Users to Group`} />
+        <FeatureItem icon={<GroupIcon />} description={`Add Users to Group`} />
         <Box sx={{ paddingTop: "10px", paddingBottom: "10px" }}>
           Select from the list of displayed users to assign users to the new
           group at creation. These users inherit the policies assigned to the
           group.
         </Box>
         <FeatureItem
-          icon={<IAMPoliciesIcon />}
+          icon={<ShieldIcon />}
           description={`Assign Custom IAM Policies for Group`}
         />
         <Box sx={{ paddingTop: "10px", paddingBottom: "10px" }}>

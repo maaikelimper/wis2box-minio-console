@@ -143,14 +143,14 @@ const EnableVersioningModal = ({
           <Button
             id={"clear"}
             type="button"
-            variant="regular"
+            
             color="primary"
             onClick={resetForm}
             label={"Clear"}
           />
           <Button
             type="submit"
-            variant="callAction"
+            
             onClick={enableVersioning}
             id="saveTag"
             label={"Save"}

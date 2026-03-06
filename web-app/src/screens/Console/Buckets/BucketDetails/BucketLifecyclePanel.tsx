@@ -17,13 +17,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import get from "lodash/get";
 import {
-  AddIcon,
+  ActivityIcon,
   Button,
   DataTable,
   Grid,
   HelpBox,
   SectionTitle,
-  TiersIcon,
+  // TiersIcon,
   HelpTip,
 } from "mds";
 import { useSelector } from "react-redux";
@@ -312,8 +312,8 @@ const BucketLifecyclePanel = () => {
                   setAddLifecycleOpen(true);
                 }}
                 label={"Add Lifecycle Rule"}
-                icon={<AddIcon />}
-                variant={"callAction"}
+                icon={<ActivityIcon />}
+                
               />
             </TooltipWrapper>
           </SecureComponent>
@@ -365,7 +365,7 @@ const BucketLifecyclePanel = () => {
             <br />
             <HelpBox
               title={"Lifecycle Rules"}
-              iconComponent={<TiersIcon />}
+              // iconComponent={<TiersIcon />}
               help={
                 <Fragment>
                   MinIO Object Lifecycle Management allows creating rules for

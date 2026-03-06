@@ -38,9 +38,8 @@ import {
 } from "./healthInfoSlice";
 import { registeredCluster } from "../../../config";
 import TestWrapper from "../Common/TestWrapper/TestWrapper";
-import RegisterCluster from "../Support/RegisterCluster";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 const HealthInfo = () => {
   const dispatch = useAppDispatch();
@@ -209,10 +208,10 @@ const HealthInfo = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label="Health" actions={<HelpMenu />} />
+      <PageHeaderWrapper label="Health"  />
 
       <PageLayout>
-        {!clusterRegistered && <RegisterCluster compactMode />}
+        {/* RegisterCluster removed: not defined */}
         <Box withBorders>
           <TestWrapper title={title}>
             <Grid
@@ -294,7 +293,7 @@ const HealthInfo = () => {
                             <Button
                               id={"download"}
                               type="submit"
-                              variant="callAction"
+                              
                               onClick={() => download()}
                               disabled={downloadDisabled}
                               label={"Download"}
@@ -305,9 +304,6 @@ const HealthInfo = () => {
                         <Button
                           id="start-new-diagnostic"
                           type="submit"
-                          variant={
-                            !clusterRegistered ? "regular" : "callAction"
-                          }
                           disabled={startDiagnostic || !clusterRegistered}
                           onClick={startDiagnosticAction}
                           label={buttonStartText}
@@ -327,7 +323,6 @@ const HealthInfo = () => {
               title={
                 "Cluster Health Report will be uploaded to SUBNET, and is viewable from your SUBNET Diagnostics dashboard."
               }
-              iconComponent={<InfoIcon />}
               help={
                 "If the Health report cannot be generated at this time, please wait a moment and try again."
               }

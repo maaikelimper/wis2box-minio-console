@@ -39,7 +39,7 @@ import { setDestinationLoading } from "./destinationsSlice";
 import withSuspense from "../Common/Components/withSuspense";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import TargetTitle from "./TargetTitle";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 const ConfMySql = withSuspense(
   React.lazy(() => import("./CustomForms/ConfMySql")),
@@ -151,7 +151,7 @@ const AddEventDestination = ({
             />
           </Fragment>
         }
-        actions={<HelpMenu />}
+        
       />
 
       <PageLayout>
@@ -192,7 +192,7 @@ const AddEventDestination = ({
                   <Button
                     id={"save-notification-target"}
                     type="submit"
-                    variant="callAction"
+                    
                     disabled={saving || identifier.trim() === ""}
                     label={"Save Event Destination"}
                   />

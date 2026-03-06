@@ -21,8 +21,8 @@ import get from "lodash/get";
 import { displayFileIconName } from "../ListObjects/utils";
 import {
   DownloadIcon,
-  PreviewIcon,
-  RecoverIcon,
+  EyeIcon,
+  FileIcon,
   ShareIcon,
   IconButton,
   Tooltip,
@@ -178,7 +178,7 @@ const FileVersionItem = ({
 
   const versionItemButtons = [
     {
-      icon: <PreviewIcon />,
+      icon: <EyeIcon />, 
       action: onPreview,
       tooltip: "Preview",
     },
@@ -193,7 +193,7 @@ const FileVersionItem = ({
       tooltip: "Share this version",
     },
     {
-      icon: <RecoverIcon />,
+      icon: <FileIcon />,
       action: onRestore,
       tooltip: "Restore this version",
     },

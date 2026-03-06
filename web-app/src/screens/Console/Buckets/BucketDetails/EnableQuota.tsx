@@ -162,14 +162,13 @@ const EnableQuota = ({
                   disabled={false}
                 />
               }
-              error={!validInput ? "Please enter a valid quota" : ""}
+              helper={!validInput ? "Please enter a valid quota" : ""}
             />
           )}
           <Grid item xs={12} sx={modalStyleUtils.modalButtonBar}>
             <Button
               id={"cancel"}
               type="button"
-              variant="regular"
               disabled={loading}
               onClick={() => {
                 closeModalAndRefresh();
@@ -180,7 +179,6 @@ const EnableQuota = ({
             <Button
               id={"save"}
               type="submit"
-              variant="callAction"
               disabled={loading || !validInput}
               label={"Save"}
             />

@@ -16,12 +16,12 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import {
-  AddIcon,
+  ActivityIcon,
   Button,
   DataTable,
   Grid,
   HelpBox,
-  IAMPoliciesIcon,
+  ShieldIcon,
   PageLayout,
 } from "mds";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +49,7 @@ import SearchBox from "../Common/SearchBox";
 import withSuspense from "../Common/Components/withSuspense";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 const DeletePolicy = withSuspense(React.lazy(() => import("./DeletePolicy")));
 
@@ -176,7 +176,7 @@ const ListPolicies = () => {
           closeDeleteModalAndRefresh={closeDeleteModalAndRefresh}
         />
       )}
-      <PageHeaderWrapper label="IAM Policies" actions={<HelpMenu />} />
+      <PageHeaderWrapper label="IAM Policies"  />
 
       <PageLayout>
         <Grid container>
@@ -206,8 +206,8 @@ const ListPolicies = () => {
                 <Button
                   id={"create-policy"}
                   label={"Create Policy"}
-                  variant="callAction"
-                  icon={<AddIcon />}
+                  
+                  icon={<ActivityIcon />}
                   onClick={() => {
                     navigate(`${IAM_PAGES.POLICY_ADD}`);
                   }}
@@ -246,7 +246,6 @@ const ListPolicies = () => {
           <Grid item xs={12} sx={{ marginTop: 15 }}>
             <HelpBox
               title={"Learn more about IAM POLICIES"}
-              iconComponent={<IAMPoliciesIcon />}
               help={
                 <Fragment>
                   MinIO uses Policy-Based Access Control (PBAC) to define the

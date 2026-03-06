@@ -18,7 +18,7 @@ import React, { Fragment } from "react";
 import useApi from "../../Common/Hooks/useApi";
 import ConfirmDialog from "../../Common/ModalWrapper/ConfirmDialog";
 import { ErrorResponseHandler } from "../../../../common/types";
-import { ConfirmDeleteIcon } from "mds";
+import { DeleteIcon } from "mds";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 
@@ -65,7 +65,7 @@ const DeleteBucketTagModal = ({
       title={`Delete Tag`}
       confirmText={"Delete"}
       isOpen={deleteOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={deleteLoading}
       onConfirm={onConfirmDelete}
       onClose={onClose}

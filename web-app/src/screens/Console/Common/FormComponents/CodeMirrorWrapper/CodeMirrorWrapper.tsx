@@ -55,7 +55,7 @@ const CodeMirrorWrapper = ({
                 id={"copy-code-mirror"}
                 icon={<CopyIcon />}
                 color={"primary"}
-                variant={"regular"}
+                
               />
             </CopyToClipboard>
           </TooltipWrapper>

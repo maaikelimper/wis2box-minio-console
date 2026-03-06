@@ -17,11 +17,11 @@
 import React, { Fragment } from "react";
 import {
   Button,
-  SyncIcon,
+  RotateCCWIcon,
   Grid,
   Box,
   breakPoints,
-  TimeIcon,
+  ClockIcon,
   DateTimeInput,
 } from "mds";
 import { DateTime } from "luxon";
@@ -128,24 +128,12 @@ const DateRangeSelector = ({
             onChange={setTimeStart}
             id="stTime"
             secondsSelector={false}
-            pickerStartComponent={
-              <Fragment>
-                <TimeIcon />
-                <span>{startLabel}</span>
-              </Fragment>
-            }
           />
           <DateTimeInput
             value={timeEnd}
             onChange={setTimeEnd}
             id="endTime"
             secondsSelector={false}
-            pickerStartComponent={
-              <Fragment>
-                <TimeIcon />
-                <span>{endLabel}</span>
-              </Fragment>
-            }
           />
         </Box>
 
@@ -160,9 +148,9 @@ const DateRangeSelector = ({
             <Button
               id={"sync"}
               type="button"
-              variant="callAction"
+              
               onClick={triggerSync}
-              icon={<SyncIcon />}
+              icon={<RotateCCWIcon />}
               label={"Sync"}
             />
           </Box>

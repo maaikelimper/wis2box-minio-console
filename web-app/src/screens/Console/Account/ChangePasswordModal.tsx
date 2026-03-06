@@ -17,7 +17,7 @@
 import React, { Fragment, useState } from "react";
 import {
   Button,
-  ChangePasswordIcon,
+  LockIcon,
   InputBox,
   Grid,
   FormLayout,
@@ -114,7 +114,7 @@ const ChangePassword = ({ open, closeModal }: IChangePasswordProps) => {
         setCurrentPassword("");
         closeModal();
       }}
-      titleIcon={<ChangePasswordIcon />}
+      titleIcon={<LockIcon />}
     >
       <div>
         This will change your Console password. Please note your new password
@@ -185,7 +185,7 @@ const ChangePassword = ({ open, closeModal }: IChangePasswordProps) => {
             <Button
               id={"save-password-modal"}
               type="submit"
-              variant="callAction"
+              
               color="primary"
               disabled={
                 loading ||

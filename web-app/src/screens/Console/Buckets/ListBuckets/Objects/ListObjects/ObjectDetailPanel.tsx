@@ -24,17 +24,13 @@ import {
   DeleteIcon,
   DownloadIcon,
   Grid,
-  InspectMenuIcon,
-  LegalHoldIcon,
+  MenuIcon,
+  LockIcon,
   Loader,
-  MetadataIcon,
-  ObjectInfoIcon,
-  PreviewIcon,
-  RetentionIcon,
+  EyeIcon,
   ShareIcon,
   SimpleHeader,
   TagsIcon,
-  VersionsIcon,
 } from "mds";
 import { api } from "api";
 import { downloadObject } from "../../../../ObjectBrowser/utils";
@@ -394,7 +390,7 @@ const ObjectDetailPanel = ({
       disabled:
         !!actualInfo.is_delete_marker ||
         (objectType === "none" && !canGetObject),
-      icon: <PreviewIcon />,
+      icon: <EyeIcon />, 
       tooltip: canGetObject
         ? "Preview this File"
         : permissionTooltipHelper(
@@ -413,7 +409,7 @@ const ObjectDetailPanel = ({
         !!actualInfo.is_delete_marker ||
         !canSetLegalHold ||
         selectedVersion !== "",
-      icon: <LegalHoldIcon />,
+      icon: <LockIcon />,
       tooltip: canSetLegalHold
         ? locking
           ? "Change Legal Hold rules for this File"
@@ -432,7 +428,7 @@ const ObjectDetailPanel = ({
         !canChangeRetention ||
         selectedVersion !== "" ||
         !locking,
-      icon: <RetentionIcon />,
+      icon: <LockIcon />,
       tooltip: canChangeRetention
         ? locking
           ? "Change Retention rules for this File"
@@ -477,7 +473,7 @@ const ObjectDetailPanel = ({
         !!actualInfo.is_delete_marker ||
         selectedVersion !== "" ||
         !canInspect,
-      icon: <InspectMenuIcon />,
+      icon: <MenuIcon />,
       tooltip: canInspect
         ? "Inspect this file"
         : permissionTooltipHelper(
@@ -495,7 +491,7 @@ const ObjectDetailPanel = ({
         );
       },
       label: versionsMode ? "Hide Object Versions" : "Display Object Versions",
-      icon: <VersionsIcon />,
+      icon: <EyeIcon />,
       disabled:
         !distributedSetup ||
         !(actualInfo.version_id && actualInfo.version_id !== "null") ||
@@ -689,7 +685,7 @@ const ObjectDetailPanel = ({
               </SecureComponent>
             </Grid>
           </TooltipWrapper>
-          <SimpleHeader icon={<ObjectInfoIcon />} label={"Object Info"} />
+          <SimpleHeader icon={<EyeIcon />} label={"Object Info"} />
           <Box className={"detailContainer"}>
             <strong>Name:</strong>
             <br />
@@ -789,7 +785,7 @@ const ObjectDetailPanel = ({
           </Box>
           {!actualInfo.is_delete_marker && (
             <Fragment>
-              <SimpleHeader label={"Metadata"} icon={<MetadataIcon />} />
+              <SimpleHeader label={"Metadata"} icon={<EyeIcon />} />
               <Box className={"detailContainer"}>
                 {actualInfo && metaData ? (
                   <ObjectMetaData metaData={metaData} />

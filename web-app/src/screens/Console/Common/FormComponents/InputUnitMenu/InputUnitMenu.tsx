@@ -15,9 +15,12 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { DropdownSelector, SelectorType } from "mds";
+import { DropdownSelector, type SelectOption } from "mds";
 import styled from "styled-components";
 import get from "lodash/get";
+
+// Use SelectOption as SelectorType
+export type SelectorType = SelectOption;
 
 interface IInputUnitBox {
   id: string;

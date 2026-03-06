@@ -23,10 +23,10 @@ import {
   Button,
   DataTable,
   Grid,
-  IAMPoliciesIcon,
+  ShieldIcon,
   PageLayout,
   ProgressBar,
-  RefreshIcon,
+  RotateCWIcon,
   ScreenTitle,
   SectionTitle,
   Tabs,
@@ -70,7 +70,7 @@ import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { Policy } from "../../../api/consoleApi";
 import { api } from "../../../api";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import SearchBox from "../Common/SearchBox";
 
 const DeletePolicy = withSuspense(React.lazy(() => import("./DeletePolicy")));
@@ -342,11 +342,11 @@ const PolicyDetails = () => {
             />
           </Fragment>
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <ScreenTitle
-          icon={<IAMPoliciesIcon width={40} />}
+          icon={<ShieldIcon width={40} />}
           title={policyName}
           subTitle={<Fragment>IAM Policy</Fragment>}
           actions={
@@ -369,7 +369,7 @@ const PolicyDetails = () => {
                   <Button
                     id={"delete-policy"}
                     label={"Delete Policy"}
-                    variant="secondary"
+                    
                     icon={<TrashIcon />}
                     onClick={deletePolicy}
                     disabled={!canDeletePolicy}
@@ -381,8 +381,8 @@ const PolicyDetails = () => {
                 <Button
                   id={"refresh-policy"}
                   label={"Refresh"}
-                  variant="regular"
-                  icon={<RefreshIcon />}
+                  
+                  icon={<RotateCWIcon />}
                   onClick={() => {
                     refreshPolicyDetails();
                   }}
@@ -588,7 +588,7 @@ const PolicyDetails = () => {
                             {!policy && (
                               <Button
                                 type="button"
-                                variant={"regular"}
+                                
                                 id={"clear-policy"}
                                 onClick={() => {
                                   resetForm();
@@ -615,7 +615,7 @@ const PolicyDetails = () => {
                                 <Button
                                   id={"save"}
                                   type="submit"
-                                  variant="callAction"
+                                  
                                   color="primary"
                                   disabled={
                                     addLoading || !validSave || !canEditPolicy

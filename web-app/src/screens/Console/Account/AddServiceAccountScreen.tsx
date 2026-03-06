@@ -20,14 +20,14 @@ import {
   BackLink,
   Button,
   PageLayout,
-  PasswordKeyIcon,
-  ServiceAccountCredentialsIcon,
+  LockIcon,
+  ActivityIcon,
   Grid,
   Box,
   FormLayout,
   InputBox,
   Switch,
-  ServiceAccountIcon,
+  UsersIcon,
   HelpTip,
   DateTimeInput,
 } from "mds";
@@ -43,7 +43,7 @@ import AddServiceAccountHelpBox from "./AddServiceAccountHelpBox";
 import CredentialsPrompt from "../Common/CredentialsPrompt/CredentialsPrompt";
 import PanelTitle from "../Common/PanelTitle/PanelTitle";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { useAppDispatch } from "store";
 import { getRandomString } from "common/utils";
 
@@ -158,12 +158,12 @@ const AddServiceAccount = () => {
               onClick={() => navigate(IAM_PAGES.ACCOUNT)}
             />
           }
-          actions={<HelpMenu />}
+          
         />
         <PageLayout>
           <FormLayout
             helpBox={<AddServiceAccountHelpBox />}
-            icon={<ServiceAccountCredentialsIcon />}
+            icon={<UsersIcon />}
             title={"Create Access Key"}
           >
             <form
@@ -183,7 +183,7 @@ const AddServiceAccount = () => {
                 onChange={(e) => {
                   setAccessKey(e.target.value);
                 }}
-                startIcon={<ServiceAccountIcon />}
+                startIcon={<UsersIcon />}
               />
               <InputBox
                 value={secretKey}
@@ -195,7 +195,7 @@ const AddServiceAccount = () => {
                 onChange={(e) => {
                   setSecretKey(e.target.value);
                 }}
-                startIcon={<PasswordKeyIcon />}
+                startIcon={<LockIcon />}
               />
               <Switch
                 value="serviceAccountPolicy"
@@ -314,7 +314,7 @@ const AddServiceAccount = () => {
                 <Button
                   id={"clear"}
                   type="button"
-                  variant="regular"
+                  
                   onClick={resetForm}
                   label={"Clear"}
                 />
@@ -322,7 +322,7 @@ const AddServiceAccount = () => {
                 <Button
                   id={"create-sa"}
                   type="submit"
-                  variant="callAction"
+                  
                   color="primary"
                   label={"Create"}
                 />

@@ -229,14 +229,14 @@ const SetRetention = ({
             <Button
               id={"reset"}
               type="button"
-              variant="regular"
+              
               onClick={resetForm}
               label={"Reset"}
             />
             <Button
               id={"save"}
               type="submit"
-              variant="callAction"
+              
               disabled={
                 (statusEnabled && type === "") ||
                 (statusEnabled && !isDateValid) ||

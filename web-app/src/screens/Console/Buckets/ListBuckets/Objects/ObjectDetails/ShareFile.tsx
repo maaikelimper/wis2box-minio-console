@@ -231,7 +231,7 @@ const ShareFile = ({
                   <CopyToClipboard text={shareURL}>
                     <Button
                       id={"copy-path"}
-                      variant="regular"
+                      
                       onClick={() => {
                         dispatch(
                           setModalSnackMessage("Share URL Copied to clipboard"),

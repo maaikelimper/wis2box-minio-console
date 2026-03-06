@@ -16,7 +16,7 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import {
-  AddAccessRuleIcon,
+  ActivityIcon,
   BackLink,
   Box,
   Button,
@@ -28,7 +28,7 @@ import {
 import AddPolicyHelpBox from "./AddPolicyHelpBox";
 import CodeMirrorWrapper from "../Common/FormComponents/CodeMirrorWrapper/CodeMirrorWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useNavigate } from "react-router-dom";
@@ -103,12 +103,12 @@ const AddPolicyScreen = () => {
               onClick={() => navigate(IAM_PAGES.POLICIES)}
             />
           }
-          actions={<HelpMenu />}
+          
         />
         <PageLayout>
           <FormLayout
             title={"Create Policy"}
-            icon={<AddAccessRuleIcon />}
+            icon={<ActivityIcon />}
             helpBox={<AddPolicyHelpBox />}
           >
             <form
@@ -126,7 +126,7 @@ const AddPolicyScreen = () => {
                     label="Policy Name"
                     autoFocus={true}
                     value={policyName}
-                    error={validatePolicyname(policyName)}
+                    helper={validatePolicyname(policyName)}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       setPolicyName(e.target.value);
                     }}
@@ -165,7 +165,7 @@ const AddPolicyScreen = () => {
                     <Button
                       id={"clear"}
                       type="button"
-                      variant="regular"
+                      
                       onClick={resetForm}
                       label={"Clear"}
                     />
@@ -173,7 +173,7 @@ const AddPolicyScreen = () => {
                     <Button
                       id={"save-policy"}
                       type="submit"
-                      variant="callAction"
+                      
                       color="primary"
                       disabled={addLoading || !validSave}
                       label={"Save"}

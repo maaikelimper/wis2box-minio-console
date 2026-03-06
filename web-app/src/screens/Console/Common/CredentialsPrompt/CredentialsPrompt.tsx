@@ -21,8 +21,8 @@ import {
   Box,
   Button,
   DownloadIcon,
-  ServiceAccountCredentialsIcon,
-  WarnIcon,
+  UsersIcon,
+  CircleAlertIcon,
   Grid,
 } from "mds";
 import { NewServiceAccount } from "./types";
@@ -147,7 +147,7 @@ const CredentialsPrompt = ({
         closeModal();
       }}
       title={`New ${entity} Created`}
-      titleIcon={<ServiceAccountCredentialsIcon />}
+      titleIcon={<UsersIcon />}
     >
       <Grid container>
         <Grid item xs={12}>
@@ -219,7 +219,7 @@ const CredentialsPrompt = ({
             </WarningBlock>
           ) : (
             <WarningBlock>
-              <WarnIcon />
+              <CircleAlertIcon />
               <span>
                 Write these down, as this is the only time the secret will be
                 displayed.
@@ -240,7 +240,7 @@ const CredentialsPrompt = ({
                   label={"Download for import"}
                   onClick={downloadImport}
                   icon={<DownloadIcon />}
-                  variant="callAction"
+                  
                 />
               </TooltipWrapper>
 
@@ -255,7 +255,7 @@ const CredentialsPrompt = ({
                     label={"Download all access credentials"}
                     onClick={downloaddAllCredentials}
                     icon={<DownloadIcon />}
-                    variant="callAction"
+                    
                     color="primary"
                   />
                 </TooltipWrapper>

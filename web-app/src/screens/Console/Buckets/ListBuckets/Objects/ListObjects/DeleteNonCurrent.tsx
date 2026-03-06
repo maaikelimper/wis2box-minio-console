@@ -16,7 +16,7 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 
-import { ConfirmDeleteIcon, Switch, Grid, InputBox } from "mds";
+import { DeleteIcon, Switch, Grid, InputBox } from "mds";
 import ConfirmDialog from "../../../../Common/ModalWrapper/ConfirmDialog";
 import { setErrorSnackMessage } from "../../../../../../systemSlice";
 import { AppState, useAppDispatch } from "../../../../../../store";
@@ -91,7 +91,7 @@ const DeleteNonCurrentVersions = ({
       title={`Delete Non-Current versions`}
       confirmText={"Delete"}
       isOpen={deleteOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={deleteLoading}
       onConfirm={onConfirmDelete}
       onClose={() => closeDeleteModalAndRefresh(false)}

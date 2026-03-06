@@ -49,7 +49,7 @@ const ExportConfigButton = () => {
         }}
         icon={<UploadIcon />}
         label={"Export"}
-        variant={"regular"}
+        
         disabled={isReqLoading}
       />
     </TooltipWrapper>

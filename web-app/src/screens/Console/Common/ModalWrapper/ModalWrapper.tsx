@@ -87,7 +87,6 @@ const ModalWrapper = ({
       title={title}
       titleIcon={titleIcon}
       widthLimit={wideLimit}
-      sx={sx}
       iconColor={iconColor}
     >
       <MainError isModal={true} />

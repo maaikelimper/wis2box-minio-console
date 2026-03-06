@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 import {
   BackLink,
   Box,
-  BucketReplicationIcon,
+  ActivityIcon,
   Button,
   FormLayout,
   Grid,
@@ -33,7 +33,7 @@ import { IAM_PAGES } from "../../../../common/SecureComponent/permissions";
 import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../../HelpMenu";
+//import HelpMenu from "../../HelpMenu";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
 import QueryMultiSelector from "screens/Console/Common/FormComponents/QueryMultiSelector/QueryMultiSelector";
@@ -148,7 +148,7 @@ const EditBucketReplication = () => {
             onClick={() => navigate(backLink)}
           />
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <form
@@ -164,7 +164,7 @@ const EditBucketReplication = () => {
             withBorders={false}
             helpBox={
               <HelpBox
-                iconComponent={<BucketReplicationIcon />}
+                
                 title="Bucket Replication Configuration"
                 help={
                   <Fragment>
@@ -310,7 +310,7 @@ const EditBucketReplication = () => {
               <Button
                 id={"cancel-edit-replication"}
                 type="button"
-                variant="regular"
+                
                 disabled={editLoading || saveEdit}
                 onClick={() => {
                   navigate(backLink);
@@ -320,7 +320,7 @@ const EditBucketReplication = () => {
               <Button
                 id={"save-replication"}
                 type="submit"
-                variant="callAction"
+                
                 disabled={editLoading || saveEdit}
                 label={"Save"}
               />

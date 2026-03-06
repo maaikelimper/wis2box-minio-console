@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 import {
   BackLink,
   Box,
-  BucketsIcon,
+  BucketIcon,
   Button,
   FormLayout,
   Grid,
@@ -74,7 +74,7 @@ import PageHeaderWrapper from "../../../Common/PageHeaderWrapper/PageHeaderWrapp
 import { api } from "../../../../../api";
 import { ObjectRetentionMode } from "../../../../../api/consoleApi";
 import { errorToHandler } from "../../../../../api/errors";
-import HelpMenu from "../../../HelpMenu";
+//import HelpMenu from "../../../HelpMenu";
 import CSVMultiSelector from "../../../Common/FormComponents/CSVMultiSelector/CSVMultiSelector";
 
 const ErrorBox = styled.div(({ theme }) => ({
@@ -222,15 +222,15 @@ const AddBucket = () => {
         label={
           <BackLink label={"Buckets"} onClick={() => navigate("/buckets")} />
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <FormLayout
           title={"Create Bucket"}
-          icon={<BucketsIcon />}
+          icon={<BucketIcon />}
           helpBox={
             <HelpBox
-              iconComponent={<BucketsIcon />}
+              
               title={"Buckets"}
               help={
                 <Fragment>
@@ -532,7 +532,7 @@ const AddBucket = () => {
                           disabled={false}
                         />
                       }
-                      error={
+                      helper={
                         invalidFields.includes("quotaSize")
                           ? "Please enter a valid quota"
                           : ""
@@ -655,7 +655,7 @@ const AddBucket = () => {
               <Button
                 id={"clear"}
                 type="button"
-                variant={"regular"}
+                
                 className={"clearButton"}
                 onClick={resForm}
                 label={"Clear"}
@@ -670,7 +670,7 @@ const AddBucket = () => {
                 <Button
                   id={"create-bucket"}
                   type="submit"
-                  variant="callAction"
+                  
                   color="primary"
                   disabled={
                     addLoading ||

@@ -19,7 +19,7 @@ import {
   Box,
   Button,
   FormLayout,
-  IAMPoliciesIcon,
+  EyeIcon,
   ProgressBar,
   Grid,
 } from "mds";
@@ -101,7 +101,7 @@ const SetUserPolicies = ({
       }}
       modalOpen={open}
       title="Set Policies"
-      titleIcon={<IAMPoliciesIcon />}
+      titleIcon={<EyeIcon />}
     >
       <FormLayout withBorders={false} containerPadding={false}>
         <PolicySelectors selectedPolicy={statePolicies} />
@@ -110,7 +110,7 @@ const SetUserPolicies = ({
         <Button
           id={"reset-user-policies"}
           type="button"
-          variant="regular"
+          
           color="primary"
           onClick={resetSelection}
           label={"Reset"}
@@ -118,7 +118,7 @@ const SetUserPolicies = ({
         <Button
           id={"save-user-policy"}
           type="button"
-          variant="callAction"
+          
           color="primary"
           disabled={loading}
           onClick={SetUserPoliciesAction}

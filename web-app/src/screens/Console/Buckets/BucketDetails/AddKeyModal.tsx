@@ -82,11 +82,8 @@ const AddKeyModal = ({
               label="Key Name"
               autoFocus={true}
               value={keyName}
-              error={
-                keyName.indexOf(" ") !== -1
-                  ? "Key name cannot contain spaces"
-                  : ""
-              }
+              helper={keyName.indexOf(" ") !== -1 ? "Key name cannot contain spaces" : ""}
+              state={keyName.indexOf(" ") !== -1 ? "error" : "normal"}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                 setKeyName(e.target.value);
               }}

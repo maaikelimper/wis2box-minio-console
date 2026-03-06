@@ -17,7 +17,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 import ModalWrapper from "../../Common/ModalWrapper/ModalWrapper";
 import {
-  AddAccessRuleIcon,
+  ActivityIcon,
   Button,
   FormLayout,
   Grid,
@@ -89,7 +89,7 @@ const AddAccessRule = ({
       modalOpen={modalOpen}
       title="Add Anonymous Access Rule"
       onClose={onClose}
-      titleIcon={<AddAccessRuleIcon />}
+      titleIcon={<ActivityIcon />}
     >
       <FormLayout withBorders={false} containerPadding={false}>
         <InputBox
@@ -127,7 +127,7 @@ const AddAccessRule = ({
           <Button
             id={"clear"}
             type="button"
-            variant="regular"
+            
             onClick={resetForm}
             label={"Clear"}
           />
@@ -135,7 +135,7 @@ const AddAccessRule = ({
           <Button
             id={"add-access-save"}
             type="submit"
-            variant="callAction"
+            
             disabled={prefix.trim() === ""}
             onClick={createProcess}
             label={"Save"}

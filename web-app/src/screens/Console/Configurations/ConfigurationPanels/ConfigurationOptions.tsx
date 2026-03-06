@@ -40,7 +40,7 @@ import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper"
 import ExportConfigButton from "./ExportConfigButton";
 import ImportConfigButton from "./ImportConfigButton";
 
-import HelpMenu from "../../HelpMenu";
+//import HelpMenu from "../../HelpMenu";
 import { setErrorSnackMessage, setHelpName } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import { api } from "../../../../api";
@@ -102,7 +102,7 @@ const ConfigurationOptions = () => {
 
   return (
     <Fragment>
-      <PageHeaderWrapper label={"Configuration"} actions={<HelpMenu />} />
+      <PageHeaderWrapper label={"Configuration"}  />
       <PageLayout>
         <Grid item xs={12} id={"settings-container"}>
           <ScreenTitle
@@ -153,29 +153,6 @@ const ConfigurationOptions = () => {
                   element={<Navigate to={`${IAM_PAGES.SETTINGS}/region`} />}
                 />
               </Routes>
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sx={{ paddingTop: "15px" }}>
-          <HelpBox
-            title={"Learn more about Configurations"}
-            iconComponent={<SettingsIcon />}
-            help={
-              <Fragment>
-                MinIO supports a variety of configurations ranging from
-                encryption, compression, region, notifications, etc.
-                <br />
-                <br />
-                You can learn more at our{" "}
-                <a
-                  href="https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html?ref=con#id4"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  documentation
-                </a>
-                .
-              </Fragment>
             }
           />
         </Grid>

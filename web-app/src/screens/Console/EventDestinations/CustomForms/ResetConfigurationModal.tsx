@@ -19,7 +19,7 @@ import { api } from "api";
 import { errorToHandler } from "api/errors";
 import ConfirmDialog from "../../Common/ModalWrapper/ConfirmDialog";
 
-import { ConfirmDeleteIcon, ProgressBar } from "mds";
+import { DeleteIcon, ProgressBar } from "mds";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 
@@ -61,7 +61,7 @@ const ResetConfigurationModal = ({
       title={`Restore Defaults`}
       confirmText={"Yes, Reset Configuration"}
       isOpen={resetOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={resetLoading}
       onConfirm={resetConfiguration}
       onClose={() => {

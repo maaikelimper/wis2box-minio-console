@@ -20,12 +20,11 @@ import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
   breakPoints,
-  BucketsIcon,
+  BucketIcon,
   Checkbox,
   Grid,
   HelpTip,
-  ReportedUsageIcon,
-  TotalObjectsIcon,
+  PieUsageIcon,
 } from "mds";
 import {
   calculateBytes,
@@ -200,7 +199,7 @@ const BucketListItem = ({
       </Box>
       <Box className={"bucketMetrics"}>
         <Link to={`/buckets/${bucket.name}/admin`}>
-          <BucketsIcon
+          <BucketIcon
             className={"bucketIcon"}
             style={{
               height: 48,
@@ -221,10 +220,10 @@ const BucketListItem = ({
         >
           {bucket.details?.versioning && (
             <HelpTip content={usageClarifyingContent} placement="top">
-              <ReportedUsageIcon />{" "}
+              <PieUsageIcon />{" "}
             </HelpTip>
           )}
-          {!bucket.details?.versioning && <ReportedUsageIcon />}
+          {!bucket.details?.versioning && <PieUsageIcon />}
           <span className={"metricLabel"}>Usage</span>
           <div className={"metricText"}>
             {usageScalar}
@@ -240,7 +239,7 @@ const BucketListItem = ({
         </Grid>
 
         <Grid item className={"metric"}>
-          <TotalObjectsIcon />
+          <BucketIcon />
           <span className={"metricLabel"}>Objects</span>
           <div className={"metricText"}>
             {bucket.objects ? prettyNumber(bucket.objects) : 0}

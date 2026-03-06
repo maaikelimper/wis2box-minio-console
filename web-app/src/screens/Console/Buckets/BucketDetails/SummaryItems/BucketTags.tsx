@@ -16,7 +16,7 @@
 
 import React, { useEffect, useState } from "react";
 import get from "lodash/get";
-import { AddIcon, Box, Loader, Tag } from "mds";
+import { ActivityIcon, Box, Loader, Tag } from "mds";
 import { Bucket } from "../../../Watch/types";
 import { ErrorResponseHandler } from "../../../../../common/types";
 import { IAM_SCOPES } from "../../../../../common/SecureComponent/permissions";
@@ -149,9 +149,9 @@ const BucketTags = ({ bucketName }: BucketTagProps) => {
             >
               <Tag
                 label="Add tag"
-                icon={<AddIcon />}
+                icon={<ActivityIcon />}
                 id={"create-tag"}
-                variant={"outlined"}
+                // variant={"outlined"}
                 onClick={() => {
                   setTagModalOpen(true);
                 }}

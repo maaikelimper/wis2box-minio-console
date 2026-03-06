@@ -34,7 +34,7 @@ import {
   setServerNeedsRestart,
 } from "../../../systemSlice";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { api } from "api";
 import { ApiError, HttpResponse, SetIDPResponse } from "api/consoleApi";
 import { errorToHandler } from "api/errors";
@@ -146,7 +146,7 @@ const AddIDPConfiguration = ({
             name={key}
             label={value.label}
             tooltip={value.tooltip}
-            error={value.hasError(fields[key], true)}
+            onError={value.hasError(fields[key], true)}
             value={fields[key] ? fields[key] : ""}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFields({ ...fields, [key]: e.target.value })
@@ -167,7 +167,7 @@ const AddIDPConfiguration = ({
     <Grid item xs={12}>
       <PageHeaderWrapper
         label={<BackLink onClick={() => navigate(backLink)} label={header} />}
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <FormLayout helpBox={helpBox}>
@@ -188,7 +188,7 @@ const AddIDPConfiguration = ({
                   <Button
                     id={"clear"}
                     type="button"
-                    variant="regular"
+                    
                     onClick={resetForm}
                     label={"Clear"}
                   />
@@ -196,7 +196,7 @@ const AddIDPConfiguration = ({
                   <Button
                     id={"save-key"}
                     type="submit"
-                    variant="callAction"
+                    
                     color="primary"
                     disabled={loadingCreate || !validSave()}
                     label={"Save"}

@@ -16,10 +16,9 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import {
-  ActionLink,
-  AddIcon,
-  Box,
   Button,
+  ActivityIcon,
+  Box,
   CircleIcon,
   DataTable,
   Grid,
@@ -27,7 +26,7 @@ import {
   LambdaIcon,
   PageLayout,
   ProgressBar,
-  RefreshIcon,
+  RotateCWIcon,
 } from "mds";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -177,8 +176,8 @@ const ListEventDestinations = () => {
               <Button
                 id={"reload-event-destinations"}
                 label={"Refresh"}
-                variant="regular"
-                icon={<RefreshIcon />}
+                
+                icon={<RotateCWIcon />}
                 onClick={() => {
                   dispatch(setDestinationLoading(true));
                 }}
@@ -188,8 +187,8 @@ const ListEventDestinations = () => {
               <Button
                 id={"add-notification-target"}
                 label={"Add Event Destination"}
-                variant="callAction"
-                icon={<AddIcon />}
+                
+                icon={<ActivityIcon />}
                 onClick={() => {
                   navigate(IAM_PAGES.EVENT_DESTINATIONS_ADD);
                 }}
@@ -221,32 +220,6 @@ const ListEventDestinations = () => {
                     customPaperHeight={"400px"}
                   />
                 </Box>
-                <Grid item xs={12} sx={{ marginTop: 15 }}>
-                  <HelpBox
-                    title={"Event Destinations"}
-                    iconComponent={<LambdaIcon />}
-                    help={
-                      <Fragment>
-                        MinIO bucket notifications allow administrators to send
-                        notifications to supported external services on certain
-                        object or bucket events. MinIO supports bucket and
-                        object-level S3 events similar to the Amazon S3 Event
-                        Notifications.
-                        <br />
-                        <br />
-                        You can learn more at our{" "}
-                        <a
-                          href="https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html?ref=con"
-                          target="_blank"
-                          rel="noopener"
-                        >
-                          documentation
-                        </a>
-                        .
-                      </Fragment>
-                    }
-                  />
-                </Grid>
               </Fragment>
             )}
             {records.length === 0 && (
@@ -259,30 +232,6 @@ const ListEventDestinations = () => {
                 }}
               >
                 <Grid item xs={8}>
-                  <HelpBox
-                    title={"Event Destinations"}
-                    iconComponent={<LambdaIcon />}
-                    help={
-                      <Fragment>
-                        MinIO bucket notifications allow administrators to send
-                        notifications to supported external services on certain
-                        object or bucket events. MinIO supports bucket and
-                        object-level S3 events similar to the Amazon S3 Event
-                        Notifications.
-                        <br />
-                        <br />
-                        To get started,{" "}
-                        <ActionLink
-                          onClick={() => {
-                            navigate(IAM_PAGES.EVENT_DESTINATIONS_ADD);
-                          }}
-                        >
-                          Add an Event Destination
-                        </ActionLink>
-                        .
-                      </Fragment>
-                    }
-                  />
                 </Grid>
               </Grid>
             )}

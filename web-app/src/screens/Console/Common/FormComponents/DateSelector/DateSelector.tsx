@@ -20,7 +20,7 @@ import React, {
   useImperativeHandle,
   useState,
 } from "react";
-import { Box, HelpIcon, InputLabel, Select, Tooltip } from "mds";
+import { Box, HandHelpingIcon, InputLabel, Select, Tooltip } from "mds";
 import { days, months, validDate, years } from "./utils";
 
 interface IDateSelectorProps {
@@ -119,7 +119,7 @@ const DateSelector = forwardRef(
                       },
                     }}
                   >
-                    <HelpIcon />
+                    <HandHelpingIcon />
                   </Box>
                 </Tooltip>
               </Box>

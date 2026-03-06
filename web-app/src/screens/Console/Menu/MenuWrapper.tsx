@@ -27,7 +27,6 @@ import {
   registeredCluster,
 } from "../../../config";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getLicenseConsent } from "../License/utils";
 
 const MenuWrapper = () => {
   const dispatch = useAppDispatch();

@@ -17,25 +17,11 @@
 import React from "react";
 
 import {
-  FileBookIcon,
-  FileCodeIcon,
-  FileConfigIcon,
-  FileDbIcon,
-  FileFontIcon,
-  FileImageIcon,
-  FileLockIcon,
-  FileMissingIcon,
-  FileMusicIcon,
-  FileNonType,
-  FilePdfIcon,
-  FilePptIcon,
-  FileTxtIcon,
-  FileVideoIcon,
-  FileXlsIcon,
-  FileZipIcon,
-  FolderBrowserIcon,
+  FileIcon,
+  EyeIcon,
 } from "mds";
 import IconWithLabel from "./IconWithLabel";
+
 
 interface IExtToIcon {
   icon: any;
@@ -44,60 +30,12 @@ interface IExtToIcon {
 
 export const extensionToIcon: IExtToIcon[] = [
   {
-    icon: <FileVideoIcon />,
-    extensions: ["mp4", "mov", "avi", "mpeg", "mpg"],
+    icon: <FileIcon />,
+    extensions: ["mp4", "mov", "avi", "mpeg", "mpg", "mp3", "m4a", "aac", "cer", "crt", "pem", "html", "xml", "css", "py", "go", "php", "cpp", "h", "java", "sql", "jpeg", "jpg", "gif", "tiff", "png", "heic", "dng"],
   },
   {
-    icon: <FileMusicIcon />,
-    extensions: ["mp3", "m4a", "aac"],
-  },
-  {
-    icon: <FilePdfIcon />,
-    extensions: ["pdf"],
-  },
-  {
-    icon: <FilePptIcon />,
-    extensions: ["ppt", "pptx"],
-  },
-  {
-    icon: <FileXlsIcon />,
-    extensions: ["xls", "xlsx"],
-  },
-  {
-    icon: <FileLockIcon />,
-    extensions: ["cer", "crt", "pem"],
-  },
-  {
-    icon: <FileCodeIcon />,
-    extensions: ["html", "xml", "css", "py", "go", "php", "cpp", "h", "java"],
-  },
-  {
-    icon: <FileConfigIcon />,
-    extensions: ["cfg", "yaml"],
-  },
-  {
-    icon: <FileDbIcon />,
-    extensions: ["sql"],
-  },
-  {
-    icon: <FileFontIcon />,
-    extensions: ["ttf", "otf"],
-  },
-  {
-    icon: <FileTxtIcon />,
-    extensions: ["doc", "docx", "txt", "rtf"],
-  },
-  {
-    icon: <FileZipIcon />,
-    extensions: ["zip", "rar", "tar", "gz"],
-  },
-  {
-    icon: <FileBookIcon />,
-    extensions: ["epub", "mobi", "azw", "azw3"],
-  },
-  {
-    icon: <FileImageIcon />,
-    extensions: ["jpeg", "jpg", "gif", "tiff", "png", "heic", "dng"],
+    icon: <EyeIcon />,
+    extensions: ["pdf", "ppt", "pptx", "xls", "xlsx", "cfg", "yaml", "ttf", "otf", "doc", "docx", "txt", "rtf", "zip", "rar", "tar", "gz", "epub", "mobi", "azw", "azw3"],
   },
 ];
 
@@ -106,10 +44,10 @@ export const displayFileIconName = (
   returnOnlyIcon: boolean = false,
 ) => {
   let elementString = element;
-  let icon = <FileNonType />;
+  let icon = <FileIcon />;
   // Element is a folder
   if (element.endsWith("/")) {
-    icon = <FolderBrowserIcon />;
+    icon = <FileIcon />;
     elementString = element.slice(0, -1);
   }
 
@@ -123,7 +61,7 @@ export const displayFileIconName = (
   }
 
   if (!element.endsWith("/") && element.indexOf(".") < 0) {
-    icon = <FileMissingIcon />;
+    icon = <FileIcon />;
   }
 
   const splitItem = elementString.split("/");

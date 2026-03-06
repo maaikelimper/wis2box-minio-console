@@ -22,7 +22,7 @@ import {
   FormLayout,
   Grid,
   InputBox,
-  LifecycleConfigIcon,
+  CalendarIcon,
   Loader,
   ProgressBar,
   RadioGroup,
@@ -330,7 +330,7 @@ const EditLifecycleConfiguration = ({
       }}
       modalOpen={open}
       title={"Edit Lifecycle Configuration"}
-      titleIcon={<LifecycleConfigIcon />}
+      titleIcon={<CalendarIcon />}
     >
       {!loadingTiers ? (
         <form
@@ -531,7 +531,7 @@ const EditLifecycleConfiguration = ({
               <Button
                 id={"cancel"}
                 type="button"
-                variant="regular"
+                
                 disabled={addLoading}
                 onClick={() => {
                   closeModalAndRefresh(false);
@@ -541,7 +541,7 @@ const EditLifecycleConfiguration = ({
               <Button
                 id={"save"}
                 type="submit"
-                variant="callAction"
+                
                 color="primary"
                 disabled={addLoading || !isFormValid}
                 label={"Save"}

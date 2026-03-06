@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { ConfirmModalIcon, Grid } from "mds";
+import { CircleAlertIcon, Grid } from "mds";
 
 interface IValidRule {
   ruleText: string;
@@ -26,7 +26,7 @@ const ValidRule = ({ ruleText }: IValidRule) => {
     <Fragment>
       <Grid container style={{ display: "flex", justifyContent: "flex-start" }}>
         <Grid item xs={1}>
-          <ConfirmModalIcon
+          <CircleAlertIcon
             width={"16px"}
             height={"16px"}
             style={{ color: "#18BF42" }}

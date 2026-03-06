@@ -20,20 +20,20 @@ import {
   Box,
   breakPoints,
   Button,
-  ConsoleIcon,
-  EditIcon,
+  SettingsIcon,
+  PencilIcon,
   FormLayout,
   Grid,
   HelpBox,
   InputBox,
   PageLayout,
-  RefreshIcon,
+  RotateCWIcon,
   ScreenTitle,
   Switch,
   Tooltip,
   TrashIcon,
   ValuePair,
-  WarnIcon,
+  CircleAlertIcon,
 } from "mds";
 import { useNavigate, useParams } from "react-router-dom";
 import { modalStyleUtils } from "../Common/FormComponents/common/styleLibrary";
@@ -45,7 +45,7 @@ import {
 } from "../../../systemSlice";
 import DeleteIDPConfigurationModal from "./DeleteIDPConfigurationModal";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { api } from "api";
 import {
   ApiError,
@@ -261,7 +261,7 @@ const IDPConfigurationDetails = ({
             name={key}
             label={value.label}
             tooltip={value.tooltip}
-            error={value.hasError(fields[key], editMode)}
+            onError={value.hasError(fields[key], editMode)}
             value={fields[key] ? fields[key] : ""}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFields({ ...fields, [key]: e.target.value })
@@ -285,27 +285,6 @@ const IDPConfigurationDetails = ({
           }}
         >
           <Grid container>
-            {editMode ? (
-              <Grid item xs={12} sx={{ marginBottom: 15 }}>
-                <HelpBox
-                  title={
-                    <Box
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        flexGrow: 1,
-                      }}
-                    >
-                      Client Secret must be re-entered to change OpenID
-                      configurations
-                    </Box>
-                  }
-                  iconComponent={<WarnIcon />}
-                  help={null}
-                />
-              </Grid>
-            ) : null}
             <Grid xs={12} item>
               {Object.entries(formFields).map(([key, value]) =>
                 renderFormField(key, value),
@@ -315,7 +294,7 @@ const IDPConfigurationDetails = ({
                   <Button
                     id={"clear"}
                     type="button"
-                    variant="regular"
+                    
                     onClick={resetForm}
                     label={"Clear"}
                   />
@@ -324,7 +303,7 @@ const IDPConfigurationDetails = ({
                   <Button
                     id={"cancel"}
                     type="button"
-                    variant="regular"
+                    
                     onClick={toggleEditMode}
                     label={"Cancel"}
                   />
@@ -333,7 +312,7 @@ const IDPConfigurationDetails = ({
                   <Button
                     id={"save-key"}
                     type="submit"
-                    variant="callAction"
+                    
                     color="primary"
                     disabled={loadingDetails || loadingSave || !validSave()}
                     label={"Save"}
@@ -399,7 +378,7 @@ const IDPConfigurationDetails = ({
                     placement={"right"}
                   >
                     <span className={"muted"}>
-                      <ConsoleIcon />
+                      <SettingsIcon />
                     </span>
                   </Tooltip>
                 </Box>
@@ -436,7 +415,7 @@ const IDPConfigurationDetails = ({
       <Grid item xs={12}>
         <PageHeaderWrapper
           label={<BackLink onClick={() => navigate(backLink)} label={header} />}
-          actions={<HelpMenu />}
+          
         />
         <PageLayout>
           <ScreenTitle
@@ -479,7 +458,7 @@ const IDPConfigurationDetails = ({
                       id={"edit"}
                       type="button"
                       variant={"callAction"}
-                      icon={<EditIcon />}
+                      icon={<PencilIcon />}
                       onClick={toggleEditMode}
                       label={"Edit"}
                       disabled={envOverride}
@@ -504,7 +483,7 @@ const IDPConfigurationDetails = ({
                   id={"refresh-idp-config"}
                   onClick={() => setLoadingDetails(true)}
                   label={"Refresh"}
-                  icon={<RefreshIcon />}
+                  icon={<RotateCWIcon />}
                 />
               </Fragment>
             }

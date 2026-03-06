@@ -17,17 +17,13 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  AddIcon,
   Button,
-  DeleteIcon,
-  GroupsIcon,
   HelpBox,
   PageLayout,
-  UsersIcon,
   DataTable,
   Grid,
   ProgressBar,
-  ActionLink,
+  EyeIcon,
 } from "mds";
 
 import { User, UsersList } from "./types";
@@ -57,7 +53,7 @@ import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 const DeleteUser = withSuspense(React.lazy(() => import("./DeleteUser")));
 const AddToGroup = withSuspense(React.lazy(() => import("./BulkAddToGroup")));
@@ -189,7 +185,7 @@ const ListUsers = () => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Users"} actions={<HelpMenu />} />
+      <PageHeaderWrapper label={"Users"}  />
 
       <PageLayout>
         <Grid container>
@@ -227,7 +223,7 @@ const ListUsers = () => {
                     setDeleteOpen(true);
                   }}
                   label={"Delete Selected"}
-                  icon={<DeleteIcon />}
+                  icon={<EyeIcon />}
                   disabled={checkedUsers.length === 0}
                   variant={"secondary"}
                   aria-label="delete-selected-users"
@@ -254,14 +250,14 @@ const ListUsers = () => {
                 <Button
                   id={"add-to-group"}
                   label={"Add to Group"}
-                  icon={<GroupsIcon />}
+                  icon={<EyeIcon />}
                   disabled={checkedUsers.length <= 0}
                   onClick={() => {
                     if (checkedUsers.length > 0) {
                       setAddGroupOpen(true);
                     }
                   }}
-                  variant={"regular"}
+                  
                 />
               </TooltipWrapper>
             </SecureComponent>
@@ -302,11 +298,10 @@ const ListUsers = () => {
                 <Button
                   id={"create-user"}
                   label={"Create User"}
-                  icon={<AddIcon />}
+                  icon={<EyeIcon />}
                   onClick={() => {
                     navigate(`${IAM_PAGES.USER_ADD}`);
                   }}
-                  variant={"callAction"}
                   disabled={
                     !hasPermission(
                       "console-ui",
@@ -355,7 +350,6 @@ const ListUsers = () => {
                   </Grid>
                   <HelpBox
                     title={"Users"}
-                    iconComponent={<UsersIcon />}
                     help={
                       <Fragment>
                         A MinIO user consists of a unique access key (username)
@@ -404,7 +398,6 @@ const ListUsers = () => {
                   <Grid item xs={8}>
                     <HelpBox
                       title={"Users"}
-                      iconComponent={<UsersIcon />}
                       help={
                         <Fragment>
                           A MinIO user consists of a unique access key
@@ -445,13 +438,14 @@ const ListUsers = () => {
                             <br />
                             <br />
                             To get started,{" "}
-                            <ActionLink
+                            <Button
+                              id="create-user-empty-list"
                               onClick={() => {
                                 navigate(`${IAM_PAGES.USER_ADD}`);
                               }}
                             >
                               Create a User
-                            </ActionLink>
+                            </Button>
                             .
                           </SecureComponent>
                         </Fragment>

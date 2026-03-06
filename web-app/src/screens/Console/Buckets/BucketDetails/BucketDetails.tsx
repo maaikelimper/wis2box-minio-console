@@ -26,11 +26,11 @@ import {
 import {
   BackLink,
   Box,
-  BucketsIcon,
+  BucketIcon,
   Button,
   FolderIcon,
   PageLayout,
-  RefreshIcon,
+  RotateCWIcon,
   ScreenTitle,
   Tabs,
   TrashIcon,
@@ -68,7 +68,7 @@ import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
-import HelpMenu from "../../HelpMenu";
+// ...existing code...
 
 const DeleteBucket = withSuspense(
   React.lazy(() => import("../ListBuckets/DeleteBucket")),
@@ -78,15 +78,6 @@ const AccessRulePanel = withSuspense(
 );
 const AccessDetailsPanel = withSuspense(
   React.lazy(() => import("./AccessDetailsPanel")),
-);
-const BucketSummaryPanel = withSuspense(
-  React.lazy(() => import("./BucketSummaryPanel")),
-);
-const BucketEventsPanel = withSuspense(
-  React.lazy(() => import("./BucketEventsPanel")),
-);
-const BucketReplicationPanel = withSuspense(
-  React.lazy(() => import("./BucketReplicationPanel")),
 );
 const BucketLifecyclePanel = withSuspense(
   React.lazy(() => import("./BucketLifecyclePanel")),
@@ -209,7 +200,7 @@ const BucketDetails = () => {
                 disabled={!canBrowse}
               />
             </TooltipWrapper>
-            <HelpMenu />
+            {/* HelpMenu removed */}
           </Fragment>
         }
       />
@@ -217,7 +208,7 @@ const BucketDetails = () => {
         <ScreenTitle
           icon={
             <Fragment>
-              <BucketsIcon width={40} />
+              <BucketIcon width={40} />
             </Fragment>
           }
           title={bucketName}
@@ -279,7 +270,7 @@ const BucketDetails = () => {
                   dispatch(setBucketDetailsLoad(true));
                 }}
                 label={"Refresh"}
-                icon={<RefreshIcon />}
+                icon={<RotateCWIcon />}
               />
             </Fragment>
           }
@@ -371,14 +362,6 @@ const BucketDetails = () => {
             ]}
             routes={
               <Routes>
-                <Route path="summary" element={<BucketSummaryPanel />} />
-                <Route path="events" element={<BucketEventsPanel />} />
-                {distributedSetup && (
-                  <Route
-                    path="replication"
-                    element={<BucketReplicationPanel />}
-                  />
-                )}
                 {distributedSetup && (
                   <Route path="lifecycle" element={<BucketLifecyclePanel />} />
                 )}

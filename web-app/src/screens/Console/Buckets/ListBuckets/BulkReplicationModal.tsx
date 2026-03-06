@@ -17,14 +17,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import {
   Box,
-  CheckCircleIcon,
+  SquareCheckIcon,
   FormLayout,
   InputBox,
   ReadBox,
   Select,
   Switch,
   Tooltip,
-  WarnIcon,
+  CircleAlertIcon,
   Wizard,
 } from "mds";
 import get from "lodash/get";
@@ -207,7 +207,7 @@ const AddBulkReplicationModal = ({
               color: "#42C91A",
             }}
           >
-            <CheckCircleIcon />
+            <SquareCheckIcon />
           </Box>
         );
       case "n/a":
@@ -221,7 +221,7 @@ const AddBulkReplicationModal = ({
               }}
             >
               <Tooltip tooltip={errString} placement="top">
-                <WarnIcon />
+                <CircleAlertIcon />
               </Tooltip>
             </Box>
           );

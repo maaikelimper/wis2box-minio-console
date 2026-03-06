@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { ArrowIcon, Box } from "mds";
+import { AArrowDownIcon, Box } from "mds";
 
 const MoreLink = ({
   LeadingIcon,
@@ -74,7 +74,7 @@ const MoreLink = ({
             marginTop: 2,
           }}
         >
-          <ArrowIcon style={{ width: 12 }} />
+          <AArrowDownIcon style={{ width: 12 }} />
         </Box>
       </Box>
     </a>

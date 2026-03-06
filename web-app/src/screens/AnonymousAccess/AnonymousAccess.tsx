@@ -55,7 +55,6 @@ const AnonymousAccess = () => {
         <div style={{ flexShrink: 1, display: "flex", flexDirection: "row" }}>
           <Button
             id={"go-to-login"}
-            variant={"text"}
             onClick={() => {
               dispatch(resetSession());
               dispatch(resetSystem());

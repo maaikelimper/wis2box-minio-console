@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import React from "react";
 
-import { Box, HelpIconFilled, IAMPoliciesIcon } from "mds";
+import { Box, InfoIcon, ShieldIcon } from "mds";
 
 const FeatureItem = ({
   icon,
@@ -72,13 +72,13 @@ const AddPolicyHelpBox = () => {
           },
         }}
       >
-        <HelpIconFilled />
+        <InfoIcon />
         <div>Learn more about Policies</div>
       </Box>
       <Box sx={{ fontSize: "14px", marginBottom: "15px" }}>
         <Box sx={{ paddingBottom: "20px" }}>
           <FeatureItem
-            icon={<IAMPoliciesIcon />}
+            icon={<ShieldIcon />}
             description={`Create Policies`}
           />
           <Box sx={{ paddingTop: "20px" }}>

@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from "react";
-import { EditIcon, IconButton } from "mds";
+import { PencilIcon, IconButton } from "mds";
 
 type EditActionButtonProps = {
   disabled?: boolean;
@@ -30,12 +30,13 @@ const EditActionButton = ({
 }: EditActionButtonProps) => {
   return (
     <IconButton
+      id="edit-action-button"
       size={"small"}
       disabled={disabled}
       onClick={onClick}
       {...restProps}
     >
-      <EditIcon />
+      <PencilIcon />
     </IconButton>
   );
 };

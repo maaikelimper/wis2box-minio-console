@@ -19,13 +19,13 @@ import React, { Fragment, useEffect, useState } from "react";
 import get from "lodash/get";
 import {
   Accordion,
-  AlertIcon,
+  CircleAlertIcon,
   Button,
   FormLayout,
   Grid,
   HelpTip,
   InputBox,
-  LifecycleConfigIcon,
+  CalendarIcon,
   ProgressBar,
   RadioGroup,
   Select,
@@ -205,7 +205,7 @@ const AddLifecycleModal = ({
         closeModalAndRefresh(false);
       }}
       title="Add Lifecycle Rule"
-      titleIcon={<LifecycleConfigIcon />}
+      titleIcon={<CalendarIcon />}
     >
       {loadingTiers && (
         <Grid container>
@@ -297,7 +297,7 @@ const AddLifecycleModal = ({
             )}
 
             <InputBox
-              error={
+              helper={
                 lifecycleDays && !isFormValid
                   ? parseInt(lifecycleDays) <= 0
                     ? `Number of ${expiryUnit} to retain must be greater than zero`
@@ -344,7 +344,7 @@ const AddLifecycleModal = ({
                         placement="right"
                       >
                         {" "}
-                        <AlertIcon style={{ width: 15, height: 15 }} />
+                        <CircleAlertIcon style={{ width: 15, height: 15 }} />
                       </HelpTip>
                     )}
                   </Grid>
@@ -462,7 +462,7 @@ const AddLifecycleModal = ({
               <Button
                 id={"reset"}
                 type="button"
-                variant="regular"
+                
                 disabled={addLoading}
                 onClick={() => {
                   closeModalAndRefresh(false);
@@ -472,7 +472,7 @@ const AddLifecycleModal = ({
               <Button
                 id={"save-lifecycle"}
                 type="submit"
-                variant="callAction"
+                
                 color="primary"
                 disabled={addLoading || !isFormValid}
                 label={"Save"}

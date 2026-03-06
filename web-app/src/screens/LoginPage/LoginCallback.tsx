@@ -19,7 +19,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import api from "../../common/api";
 import { baseUrl } from "../../history";
-import { Box, Button, LoginWrapper, WarnIcon } from "mds";
+import { Box, Button, LoginWrapper, CircleAlertIcon } from "mds";
 import { getLogoApplicationVariant, getLogoVar } from "../../config";
 import get from "lodash/get";
 
@@ -115,7 +115,7 @@ const LoginCallback = () => {
           <CallBackContainer>
             <div className={"errorTitle"}>
               <span className={"messageIcon"}>
-                <WarnIcon />
+                <CircleAlertIcon />
               </span>
               <span className={"errorLabel"}>Error from IDP</span>
             </div>
@@ -127,7 +127,7 @@ const LoginCallback = () => {
                 window.location.href = `${baseUrl}login`;
               }}
               type="submit"
-              variant="callAction"
+              
               fullWidth
             >
               Back to Login
@@ -135,19 +135,11 @@ const LoginCallback = () => {
           </CallBackContainer>
         }
         promoHeader={
-          <span style={{ fontSize: 28 }}>High-Performance Object Store</span>
+          <span style={{ fontSize: 28 }}>wis2box MinIO</span>
         }
         promoInfo={
           <span style={{ fontSize: 14, lineHeight: 1 }}>
-            MinIO is a cloud-native object store built to run on any
-            infrastructure - public, private or edge clouds. Primary use cases
-            include data lakes, databases, AI/ML, SaaS applications and fast
-            backup & recovery. MinIO is dual licensed under GNU AGPL v3 and
-            commercial license. To learn more, visit{" "}
-            <a href={"https://min.io/?ref=con"} target="_blank" rel="noopener">
-              www.min.io
-            </a>
-            .
+            wis2box-minio
           </span>
         }
         backgroundAnimation={false}

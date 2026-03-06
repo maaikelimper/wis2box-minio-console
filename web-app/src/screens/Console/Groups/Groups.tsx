@@ -17,19 +17,18 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  AddIcon,
+  ActivityIcon,
   Button,
   DeleteIcon,
-  GroupsIcon,
+  GroupIcon,
   HelpBox,
-  IAMPoliciesIcon,
+  ShieldIcon,
   PageLayout,
   UsersIcon,
   DataTable,
   Grid,
   Box,
   ProgressBar,
-  ActionLink,
 } from "mds";
 
 import { api } from "api";
@@ -55,7 +54,7 @@ import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import SearchBox from "../Common/SearchBox";
 
 const DeleteGroup = withSuspense(React.lazy(() => import("./DeleteGroup")));
@@ -197,7 +196,7 @@ const Groups = () => {
           }}
         />
       )}
-      <PageHeaderWrapper label={"Groups"} actions={<HelpMenu />} />
+      <PageHeaderWrapper label={"Groups"}  />
 
       <PageLayout>
         <Grid container>
@@ -243,9 +242,9 @@ const Groups = () => {
                       setPolicyOpen(true);
                     }}
                     label={"Assign Policy"}
-                    icon={<IAMPoliciesIcon />}
+                    icon={<ShieldIcon />}
                     disabled={checkedGroups.length < 1 || !applyPolicy}
-                    variant={"regular"}
+                    
                   />
                 </TooltipWrapper>
               </SecureComponent>
@@ -274,7 +273,7 @@ const Groups = () => {
                     }}
                     label={"Delete Selected"}
                     icon={<DeleteIcon />}
-                    variant="secondary"
+                    
                     disabled={checkedGroups.length === 0 || !getGroup}
                   />
                 </TooltipWrapper>
@@ -289,8 +288,8 @@ const Groups = () => {
                   <Button
                     id={"create-group"}
                     label={"Create Group"}
-                    variant="callAction"
-                    icon={<AddIcon />}
+                    
+                    icon={<ActivityIcon />}
                     onClick={() => {
                       navigate(`${IAM_PAGES.GROUPS_ADD}`);
                     }}
@@ -327,7 +326,6 @@ const Groups = () => {
                   <Grid item xs={12}>
                     <HelpBox
                       title={"Groups"}
-                      iconComponent={<GroupsIcon />}
                       help={
                         <Fragment>
                           A group can have one attached IAM policy, where all
@@ -335,16 +333,6 @@ const Groups = () => {
                           policy. Groups support more simplified management of
                           user permissions on the MinIO Tenant.
                           <br />
-                          <br />
-                          You can learn more at our{" "}
-                          <a
-                            href="https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html?ref=con"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            documentation
-                          </a>
-                          .
                         </Fragment>
                       }
                     />
@@ -356,7 +344,6 @@ const Groups = () => {
                   <Grid item xs={8}>
                     <HelpBox
                       title={"Groups"}
-                      iconComponent={<UsersIcon />}
                       help={
                         <Fragment>
                           A group can have one attached IAM policy, where all
@@ -371,13 +358,14 @@ const Groups = () => {
                             <br />
                             <br />
                             To get started,{" "}
-                            <ActionLink
+                            <Button
+                              
                               onClick={() => {
                                 navigate(`${IAM_PAGES.GROUPS_ADD}`);
                               }}
                             >
                               Create a Group
-                            </ActionLink>
+                            </Button>
                             .
                           </SecureComponent>
                         </Fragment>

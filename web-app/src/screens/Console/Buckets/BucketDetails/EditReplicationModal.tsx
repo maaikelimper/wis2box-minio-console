@@ -16,7 +16,7 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  BucketReplicationIcon,
+  ActivityIcon,
   Button,
   FormLayout,
   InputBox,
@@ -139,7 +139,7 @@ const EditReplicationModal = ({
         closeModalAndRefresh(false);
       }}
       title="Edit Bucket Replication"
-      titleIcon={<BucketReplicationIcon />}
+      titleIcon={<ActivityIcon />}
     >
       <form
         noValidate
@@ -259,7 +259,7 @@ const EditReplicationModal = ({
             <Button
               id={"cancel-edit-replication"}
               type="button"
-              variant="regular"
+              
               disabled={editLoading || saveEdit}
               onClick={() => {
                 closeModalAndRefresh(false);
@@ -269,7 +269,7 @@ const EditReplicationModal = ({
             <Button
               id={"save-replication"}
               type="submit"
-              variant="callAction"
+              
               disabled={editLoading || saveEdit}
               label={"Save"}
             />

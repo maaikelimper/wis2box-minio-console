@@ -40,7 +40,7 @@ const MissingIntegration = ({
       <Grid item xs={8}>
         <HelpBox
           title={`${entity} not available`}
-          iconComponent={iconComponent}
+          
           help={
             <Fragment>
               This feature is not available.

@@ -18,7 +18,7 @@ import React, { useEffect, useState, Fragment } from "react";
 import {
   Box,
   Button,
-  ChangeAccessPolicyIcon,
+  ActivityIcon,
   DateTimeInput,
   Grid,
   InputBox,
@@ -108,7 +108,7 @@ const EditServiceAccount = ({
       onClose={() => {
         closeModalAndRefresh();
       }}
-      titleIcon={<ChangeAccessPolicyIcon />}
+      titleIcon={<ActivityIcon />}
     >
       <form
         noValidate
@@ -235,7 +235,7 @@ const EditServiceAccount = ({
             <Button
               id={"cancel-sa-policy"}
               type="button"
-              variant="regular"
+              
               onClick={() => {
                 closeModalAndRefresh();
               }}
@@ -245,7 +245,7 @@ const EditServiceAccount = ({
             <Button
               id={"save-sa-policy"}
               type="submit"
-              variant="callAction"
+              
               color="primary"
               disabled={loading}
               label={"Update"}

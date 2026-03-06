@@ -16,7 +16,9 @@
 
 import React, { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, Loader, LoginWrapper, RefreshIcon } from "mds";
+import { Box, Button, Loader } from "mds";
+// Use RefreshCWIcon instead of missing RefreshIcon
+import { RefreshCWIcon } from "mds";
 import { loginStrategyType } from "./login.types";
 import MainError from "../Console/Common/MainError/MainError";
 import { AppState, useAppDispatch } from "../../store";
@@ -55,9 +57,7 @@ const Login = () => {
 
   const isK8S = useSelector((state: AppState) => state.login.isK8S);
 
-  const backgroundAnimation = useSelector(
-    (state: AppState) => state.login.backgroundAnimation,
-  );
+  // Remove backgroundAnimation, not used with Box
 
   useEffect(() => {
     if (navigateTo !== "") {
@@ -121,9 +121,8 @@ const Login = () => {
                   onClick={() => {
                     dispatch(getFetchConfigurationAsync());
                   }}
-                  icon={<RefreshIcon />}
+                  icon={<RefreshCWIcon />}
                   iconLocation={"end"}
-                  variant="regular"
                   id="retry"
                   label={"Retry"}
                 />
@@ -148,62 +147,34 @@ const Login = () => {
   return (
     <Fragment>
       <MainError />
-      <LoginWrapper
-        logoProps={{
-          applicationName: getLogoApplicationVariant(),
-          subVariant: getLogoVar(),
-        }}
-        form={loginComponent}
-        formFooter={
-          <Box
-            sx={{
-              "& .separator": {
-                marginLeft: 4,
-                marginRight: 4,
-              },
-            }}
-          >
-            <a href={docsURL} target="_blank" rel="noopener">
-              Documentation
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://github.com/minio/minio"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://subnet.min.io/?ref=con"
-              target="_blank"
-              rel="noopener"
-            >
-              Support
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://min.io/download/?ref=con"
-              target="_blank"
-              rel="noopener"
-            >
-              Download
-            </a>
-          </Box>
-        }
-        promoHeader={
+      <Box sx={{ maxWidth: 480, margin: "0 auto", padding: 4 }}>
+        <Box sx={{ textAlign: "center", mb: 4 }}>
           <span style={{ fontSize: 28 }}>High-Performance Object Store</span>
-        }
-        promoInfo={
+        </Box>
+        {loginComponent}
+        <Box sx={{ textAlign: "center", mt: 4 }}>
+          <a href={docsURL} target="_blank" rel="noopener">
+            Documentation
+          </a>
+          <span className={"separator"} style={{ margin: "0 4px" }}>|</span>
+          <a href="https://github.com/minio/minio" target="_blank" rel="noopener">
+            GitHub
+          </a>
+          <span className={"separator"} style={{ margin: "0 4px" }}>|</span>
+          <a href="https://subnet.min.io/?ref=con" target="_blank" rel="noopener">
+            Support
+          </a>
+          <span className={"separator"} style={{ margin: "0 4px" }}>|</span>
+          <a href="https://min.io/download/?ref=con" target="_blank" rel="noopener">
+            Download
+          </a>
+        </Box>
+        <Box sx={{ textAlign: "center", mt: 2 }}>
           <span style={{ fontSize: 14, lineHeight: 1 }}>
             wis2box-minio
-            </a>
-            .
           </span>
-        }
-        backgroundAnimation={backgroundAnimation}
-      />
+        </Box>
+      </Box>
     </Fragment>
   );
 };

@@ -16,7 +16,7 @@
 
 import React, { Fragment, useState } from "react";
 import { CSSObject } from "styled-components";
-import { Button, DropdownSelector, UploadFolderIcon, UploadIcon } from "mds";
+import { Button, DropdownSelector, UploadIcon } from "mds";
 import {
   IAM_SCOPES,
   permissionTooltipHelper,
@@ -119,9 +119,7 @@ const UploadFilesButton = ({
           onClick={handleClick}
           label={"Upload"}
           icon={<UploadIcon />}
-          variant={"callAction"}
           disabled={forceDisable || !uploadEnabled}
-          sx={overrideStyles}
         />
       </TooltipWrapper>
       <DropdownSelector
@@ -135,7 +133,7 @@ const UploadFilesButton = ({
           },
           {
             label: "Upload Folder",
-            icon: <UploadFolderIcon />,
+            icon: <UploadIcon />, 
             value: "folder",
             disabled: !uploadFolderAllowed || forceDisable,
           },

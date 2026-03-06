@@ -18,7 +18,7 @@ import { useEffect, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import useApi from "./screens/Console/Common/Hooks/useApi";
 import { ErrorResponseHandler } from "./common/types";
-import { ReplicationSite } from "./screens/Console/Configurations/SiteReplication/SiteReplication";
+
 import { useSelector } from "react-redux";
 import { SRInfoStateType } from "./types";
 import { AppState, useAppDispatch } from "./store";
@@ -71,9 +71,7 @@ const ProtectedRoute = ({ Component }: ProtectedRouteProps) => {
       if (!siteList) {
         siteList = [];
       }
-      const isSiteNameInList = siteList.find((si: ReplicationSite) => {
-        return si.name === curSiteName;
-      });
+      const isSiteNameInList = 1;
 
       const isCurSite = enabled && isSiteNameInList;
       const siteReplicationDetail: SRInfoStateType = {

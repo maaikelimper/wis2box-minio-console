@@ -17,15 +17,15 @@
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-  AddIcon,
+  ActivityIcon,
   BackLink,
   Box,
   Button,
   DataTable,
   Grid,
-  IAMPoliciesIcon,
+  ShieldIcon,
   PageLayout,
-  PasswordKeyIcon,
+  LockIcon,
   ScreenTitle,
   SectionTitle,
   Switch,
@@ -54,7 +54,7 @@ import { useAppDispatch } from "../../../store";
 import { policyDetailsSort } from "../../../utils/sortFunctions";
 import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import api from "../../../common/api";
 import ChangeUserGroups from "./ChangeUserGroups";
 import SetUserPolicies from "./SetUserPolicies";
@@ -250,7 +250,7 @@ const UserDetails = () => {
             />
           </Fragment>
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <Grid container>
@@ -348,8 +348,8 @@ const UserDetails = () => {
                     <Button
                       id={"change-user-password"}
                       onClick={changeUserPassword}
-                      icon={<PasswordKeyIcon />}
-                      variant={"regular"}
+                      icon={<LockIcon />}
+                      
                       disabled={userLoggedIn === userName}
                     />
                   </TooltipWrapper>
@@ -397,8 +397,7 @@ const UserDetails = () => {
                                 onClick={() => {
                                   setAddGroupOpen(true);
                                 }}
-                                icon={<AddIcon />}
-                                variant={"callAction"}
+                                icon={<ActivityIcon />}
                                 disabled={!canAssignGroup}
                               />
                             </TooltipWrapper>
@@ -475,8 +474,7 @@ const UserDetails = () => {
                                 onClick={() => {
                                   setPolicyOpen(true);
                                 }}
-                                icon={<IAMPoliciesIcon />}
-                                variant={"callAction"}
+                                icon={<ShieldIcon />}
                                 disabled={!canAssignPolicy}
                               />
                             </TooltipWrapper>

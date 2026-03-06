@@ -21,7 +21,7 @@ import { modalStyleUtils } from "../Common/FormComponents/common/styleLibrary";
 import {
   BackLink,
   Button,
-  CreateGroupIcon,
+  CirclePlusIcon,
   FormLayout,
   Grid,
   InputBox,
@@ -36,7 +36,7 @@ import { useAppDispatch } from "../../../store";
 import AddGroupHelpBox from "./AddGroupHelpBox";
 import UsersSelectors from "./UsersSelectors";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 
 const AddGroupScreen = () => {
   const dispatch = useAppDispatch();
@@ -98,12 +98,12 @@ const AddGroupScreen = () => {
             onClick={() => navigate(IAM_PAGES.GROUPS)}
           />
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <FormLayout
           title={"Create Group"}
-          icon={<CreateGroupIcon />}
+          icon={<CirclePlusIcon />}
           helpBox={<AddGroupHelpBox />}
         >
           <form noValidate autoComplete="off" onSubmit={setSaving}>
@@ -126,7 +126,7 @@ const AddGroupScreen = () => {
               <Button
                 id={"clear-group"}
                 type="button"
-                variant="regular"
+                
                 onClick={resetForm}
                 label={"Clear"}
               />
@@ -134,7 +134,7 @@ const AddGroupScreen = () => {
               <Button
                 id={"save-group"}
                 type="submit"
-                variant="callAction"
+                
                 disabled={saving || !validGroup}
                 label={"Save"}
               />

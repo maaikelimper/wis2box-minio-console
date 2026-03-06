@@ -36,7 +36,7 @@ const CredentialItem = ({ label = "", value = "" }: ICredentialsItem) => {
           <CopyToClipboard text={value}>
             <Button
               id={"copy-path"}
-              variant="regular"
+              
               onClick={() => {
                 dispatch(setModalSnackMessage(`${label} copied to clipboard`));
               }}

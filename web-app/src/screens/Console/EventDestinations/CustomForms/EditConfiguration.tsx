@@ -41,7 +41,6 @@ import {
   setSnackBarMessage,
 } from "../../../../systemSlice";
 import { AppState, useAppDispatch } from "../../../../store";
-import WebhookSettings from "../WebhookSettings/WebhookSettings";
 import ConfTargetGeneric from "../ConfTargetGeneric";
 import ResetConfigurationModal from "./ResetConfigurationModal";
 
@@ -197,76 +196,7 @@ const EditConfiguration = ({
               height: "100%",
             }}
           >
-            {selectedConfiguration.configuration_id === "logger_webhook" ||
-            selectedConfiguration.configuration_id === "audit_webhook" ? (
-              <WebhookSettings
-                WebhookSettingslist={configSubsysList}
-                setResetConfigurationOpen={resetConfigurationMOpen}
-                type={selectedConfiguration.configuration_id}
-              />
-            ) : (
-              <Fragment>
-                <form
-                  noValidate
-                  onSubmit={submitForm}
-                  className={className}
-                  style={{
-                    height: "100%",
-                    display: "flex",
-                    flexFlow: "column",
-                  }}
-                >
-                  <Grid
-                    item
-                    xs={12}
-                    sx={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr",
-                      gap: "10px",
-                    }}
-                  >
-                    <ConfTargetGeneric
-                      fields={
-                        fieldsConfigurations[
-                          selectedConfiguration.configuration_id
-                        ]
-                      }
-                      onChange={onValueChange}
-                      defaultVals={configValues}
-                      overrideEnv={overrideEnvs}
-                    />
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    sx={{
-                      paddingTop: "15px ",
-                      textAlign: "right" as const,
-                      maxHeight: "60px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "flex-end",
-                    }}
-                  >
-                    <Button
-                      type={"button"}
-                      id={"restore-defaults"}
-                      variant="secondary"
-                      onClick={resetConfigurationMOpen}
-                      label={"Restore Defaults"}
-                    />
-                    &nbsp; &nbsp;
-                    <Button
-                      id={"save"}
-                      type="submit"
-                      variant="callAction"
-                      disabled={saving}
-                      label={"Save"}
-                    />
-                  </Grid>
-                </form>
-              </Fragment>
-            )}
+            NO WEBHOOK SETTINGS
           </Box>
         )}
       </div>

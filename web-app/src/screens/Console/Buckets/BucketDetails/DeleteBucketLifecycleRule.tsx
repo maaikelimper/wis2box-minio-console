@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { useEffect, useState, Fragment } from "react";
-import { ConfirmDeleteIcon } from "mds";
+import { DeleteIcon } from "mds";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
 import { setErrorSnackMessage } from "../../../../systemSlice";
@@ -64,7 +64,7 @@ const DeleteBucketLifecycleRule = ({
       isOpen={deleteOpen}
       isLoading={deletingRule}
       onConfirm={onConfirmDelete}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       onClose={() => onCloseAndRefresh(false)}
       confirmationContent={
         <Fragment>

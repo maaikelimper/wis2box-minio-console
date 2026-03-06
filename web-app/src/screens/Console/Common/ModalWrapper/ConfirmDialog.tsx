@@ -81,8 +81,6 @@ const ConfirmDialog = ({
           onClick={onCancel || onClose}
           disabled={isLoading}
           type="button"
-          {...cancelButtonProps}
-          variant="regular"
           id={"confirm-cancel"}
           label={cancelText}
         />
@@ -92,8 +90,6 @@ const ConfirmDialog = ({
           onClick={onConfirm}
           label={confirmText}
           disabled={isLoading}
-          variant={"secondary"}
-          {...confirmButtonProps}
         />
       </Box>
     </ModalBox>

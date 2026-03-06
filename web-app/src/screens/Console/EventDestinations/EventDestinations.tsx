@@ -18,7 +18,7 @@ import React, { Fragment, useEffect } from "react";
 
 import withSuspense from "../Common/Components/withSuspense";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { setHelpName } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 
@@ -34,7 +34,7 @@ const EventDestinations = () => {
   }, []);
   return (
     <Fragment>
-      <PageHeaderWrapper label="Event Destinations" actions={<HelpMenu />} />
+      <PageHeaderWrapper label="Event Destinations"  />
       <ListNotificationEndpoints />
     </Fragment>
   );

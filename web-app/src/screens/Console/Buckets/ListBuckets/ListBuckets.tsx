@@ -17,20 +17,18 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  AddIcon,
-  BucketsIcon,
+  ActivityIcon,
+  BucketIcon,
   Button,
   HelpBox,
-  LifecycleConfigIcon,
-  MultipleBucketsIcon,
+  CalendarIcon,
   PageLayout,
-  RefreshIcon,
-  SelectAllIcon,
-  SelectMultipleIcon,
+  RotateCWIcon,
+  CheckCheckIcon,
+  CheckIcon,
   Grid,
   breakPoints,
   ProgressBar,
-  ActionLink,
 } from "mds";
 
 import { actionsTray } from "../../Common/FormComponents/common/styleLibrary";
@@ -51,7 +49,7 @@ import PageHeaderWrapper from "../../Common/PageHeaderWrapper/PageHeaderWrapper"
 import { api } from "../../../../api";
 import { Bucket } from "../../../../api/consoleApi";
 import { errorToHandler } from "../../../../api/errors";
-import HelpMenu from "../../HelpMenu";
+// ...existing code...
 import AutoColorIcon from "../../Common/Components/AutoColorIcon";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 import SearchBox from "../../Common/SearchBox";
@@ -206,7 +204,7 @@ const ListBuckets = () => {
         />
       )}
       {!obOnly && (
-        <PageHeaderWrapper label={"Buckets"} actions={<HelpMenu />} />
+        <PageHeaderWrapper label={"Buckets"}  />
       )}
 
       <PageLayout>
@@ -257,8 +255,7 @@ const ListBuckets = () => {
                       setBulkSelect(!bulkSelect);
                       setSelectedBuckets([]);
                     }}
-                    icon={<SelectMultipleIcon />}
-                    variant={bulkSelect ? "callAction" : "regular"}
+                    icon={<CheckCheckIcon />}
                     disabled={!hasBuckets}
                   />
                 </TooltipWrapper>
@@ -276,8 +273,8 @@ const ListBuckets = () => {
                     <Button
                       id={"select-all-buckets"}
                       onClick={selectAllBuckets}
-                      icon={<SelectAllIcon />}
-                      variant={"regular"}
+                      icon={<CheckCheckIcon />}
+                      
                     />
                   </TooltipWrapper>
                 )}
@@ -303,8 +300,8 @@ const ListBuckets = () => {
                     onClick={() => {
                       setLifecycleModalOpen(true);
                     }}
-                    icon={<LifecycleConfigIcon />}
-                    variant={"regular"}
+                    icon={<CalendarIcon />}
+                    
                     disabled={selectedBuckets.length === 0 || !canPutLifecycle}
                   />
                 </TooltipWrapper>
@@ -325,8 +322,8 @@ const ListBuckets = () => {
                     onClick={() => {
                       setReplicationModalOpen(true);
                     }}
-                    icon={<MultipleBucketsIcon />}
-                    variant={"regular"}
+                    icon={<BucketIcon />}
+                    
                     disabled={selectedBuckets.length === 0}
                   />
                 </TooltipWrapper>
@@ -339,8 +336,8 @@ const ListBuckets = () => {
                 onClick={() => {
                   setLoading(true);
                 }}
-                icon={<RefreshIcon />}
-                variant={"regular"}
+                icon={<RotateCWIcon />}
+                
               />
             </TooltipWrapper>
 
@@ -360,8 +357,7 @@ const ListBuckets = () => {
                   onClick={() => {
                     navigate(IAM_PAGES.ADD_BUCKETS);
                   }}
-                  icon={<AddIcon />}
-                  variant={"callAction"}
+                  icon={<ActivityIcon />}
                   disabled={!canCreateBucket}
                   label={"Create Bucket"}
                 />
@@ -394,7 +390,7 @@ const ListBuckets = () => {
               <Grid container>
                 <Grid item xs={8}>
                   <HelpBox
-                    iconComponent={<BucketsIcon />}
+                    
                     title={"No Results"}
                     help={
                       <Fragment>
@@ -409,7 +405,7 @@ const ListBuckets = () => {
               <Grid container>
                 <Grid item xs={8}>
                   <HelpBox
-                    iconComponent={<BucketsIcon />}
+                    
                     title={"Buckets"}
                     help={
                       <Fragment>
@@ -438,13 +434,16 @@ const ListBuckets = () => {
                         >
                           <br />
                           To get started,&nbsp;
-                          <ActionLink
+                          <Button
+                            id={"create-bucket-help"}
+                            isLoading={false}
                             onClick={() => {
                               navigate(IAM_PAGES.ADD_BUCKETS);
                             }}
+                            
                           >
-                            Create a Bucket.
-                          </ActionLink>
+                          Create a Bucket.
+                          </Button>
                         </SecureComponent>
                       </Fragment>
                     }

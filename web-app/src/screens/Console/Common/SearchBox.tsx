@@ -48,7 +48,6 @@ const SearchBox = ({
       }}
       value={value}
       startIcon={<SearchIcon />}
-      sx={sx}
     />
   );
 };

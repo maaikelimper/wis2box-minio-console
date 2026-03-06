@@ -16,7 +16,7 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AddIcon, Box, Button, DataTable, DeleteIcon, SectionTitle } from "mds";
+import { Box, Button, DataTable, SectionTitle, EyeIcon } from "mds";
 import api from "../../../common/api";
 import { NewServiceAccount } from "../Common/CredentialsPrompt/types";
 import { ErrorResponseHandler } from "../../../common/types";
@@ -211,7 +211,7 @@ const UserServiceAccountsPanel = ({
                   setDeleteMultipleOpen(true);
                 }}
                 label={"Delete Selected"}
-                icon={<DeleteIcon />}
+                icon={<EyeIcon />}
                 disabled={selectedSAs.length === 0}
                 variant={"secondary"}
               />
@@ -231,8 +231,8 @@ const UserServiceAccountsPanel = ({
                 <Button
                   id={"create-service-account"}
                   label={"Create Access Key"}
-                  variant="callAction"
-                  icon={<AddIcon />}
+                  
+                  icon={<EyeIcon />}
                   onClick={() => {
                     navigate(
                       `/identity/users/new-user-sa/${encodeURIComponent(user)}`,

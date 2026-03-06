@@ -17,7 +17,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { setErrorSnackMessage } from "../../../systemSlice";
-import { ConfirmDeleteIcon, DataTable, InformativeMessage, Loader } from "mds";
+import { DataTable, InformativeMessage, Loader, EyeIcon, DeleteIcon } from "mds";
 import { IAM_PAGES } from "../../../common/SecureComponent/permissions";
 import ConfirmDialog from "../Common/ModalWrapper/ConfirmDialog";
 import { useAppDispatch } from "../../../store";
@@ -122,7 +122,7 @@ const DeleteUser = ({
       title={`Delete User${selectedUsers.length > 1 ? "s" : ""}`}
       confirmText={"Delete"}
       isOpen={deleteOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={deleteLoading}
       onConfirm={onConfirmDelete}
       onClose={onClose}

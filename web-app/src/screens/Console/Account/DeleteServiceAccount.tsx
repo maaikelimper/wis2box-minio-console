@@ -16,7 +16,7 @@
 
 import React, { Fragment, useState } from "react";
 import ConfirmDialog from "../Common/ModalWrapper/ConfirmDialog";
-import { ConfirmDeleteIcon } from "mds";
+import { DeleteIcon } from "mds";
 import { setErrorSnackMessage } from "../../../systemSlice";
 import { useAppDispatch } from "../../../store";
 import { api } from "api";
@@ -63,7 +63,7 @@ const DeleteServiceAccount = ({
       title={`Delete Access Key`}
       confirmText={"Delete"}
       isOpen={deleteOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={loadingDelete}
       onConfirm={onConfirmDelete}
       onClose={onClose}

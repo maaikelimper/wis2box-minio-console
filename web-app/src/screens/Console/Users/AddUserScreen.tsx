@@ -18,7 +18,7 @@ import React, { Fragment, useEffect } from "react";
 import {
   BackLink,
   Button,
-  CreateUserIcon,
+  CirclePlusIcon,
   FormLayout,
   Grid,
   PageLayout,
@@ -39,7 +39,7 @@ import {
 } from "./AddUsersSlice";
 import AddUserHelpBox from "./AddUserHelpBox";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import PolicySelectors from "../Policies/PolicySelectors";
 import UserSelector from "./UserSelector";
 import PasswordSelector from "./PasswordSelector";
@@ -101,12 +101,12 @@ const AddUser = () => {
               onClick={() => navigate(IAM_PAGES.USERS)}
             />
           }
-          actions={<HelpMenu />}
+          
         />
         <PageLayout>
           <FormLayout
             title={"Create User"}
-            icon={<CreateUserIcon />}
+            icon={<CirclePlusIcon />}
             helpBox={<AddUserHelpBox />}
           >
             <form
@@ -135,7 +135,7 @@ const AddUser = () => {
                 <Button
                   id={"clear-add-user"}
                   type="button"
-                  variant="regular"
+                  
                   onClick={(e) => {
                     dispatch(resetFormAsync());
                   }}
@@ -145,7 +145,7 @@ const AddUser = () => {
                 <Button
                   id={"save-user"}
                   type="submit"
-                  variant="callAction"
+                  
                   color="primary"
                   disabled={addLoading || !sendEnabled}
                   label={"Save"}

@@ -24,7 +24,7 @@ import NotificationEndpointTypeSelectorHelpBox from "../Account/NotificationEndp
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import DestinationButton from "./DestinationButton";
 
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { useAppDispatch } from "../../../store";
 import { setHelpName } from "../../../systemSlice";
 
@@ -57,7 +57,7 @@ const EventTypeSelector = () => {
             />
           </Fragment>
         }
-        actions={<HelpMenu />}
+        
       />
       <PageLayout>
         <FormLayout helpBox={<NotificationEndpointTypeSelectorHelpBox />}>

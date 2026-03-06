@@ -18,10 +18,10 @@ import React, { Fragment, useState } from "react";
 import get from "lodash/get";
 import styled from "styled-components";
 import {
-  AddNewTagIcon,
+  CirclePlusIcon,
   Button,
-  DisabledIcon,
-  EditTagIcon,
+  FileIcon,
+  PencilIcon,
   InputBox,
   SectionTitle,
   Box,
@@ -164,7 +164,7 @@ const AddTagModal = ({
           onCloseAndUpdate(true);
         }}
         iconColor={deleteEnabled ? "delete" : "default"}
-        titleIcon={deleteEnabled ? <DisabledIcon /> : <EditTagIcon />}
+        titleIcon={deleteEnabled ? <FileIcon /> : <PencilIcon />}
       >
         {deleteEnabled ? (
           <Fragment>
@@ -179,13 +179,13 @@ const AddTagModal = ({
                 <Button
                   id={"cancel"}
                   type="button"
-                  variant="regular"
+                  
                   onClick={cancelDelete}
                   label={"Cancel"}
                 />
                 <Button
                   type="submit"
-                  variant="secondary"
+                  
                   onClick={deleteTagProcess}
                   id={"deleteTag"}
                   label={"Delete Tag"}
@@ -242,8 +242,8 @@ const AddTagModal = ({
                             <Tag
                               id={`${tagKey} : ${tag}`}
                               label={`${tagKey} : ${tag}`}
-                              variant={"regular"}
-                              color={"default"}
+                              
+                              color={"primary"}
                               onDelete={() => {
                                 onDeleteTag(tagKey, tag);
                               }}
@@ -266,7 +266,7 @@ const AddTagModal = ({
               errorProps={{ disabled: true, onClick: null }}
             >
               <Box>
-                <SectionTitle icon={<AddNewTagIcon />} separator={false}>
+                <SectionTitle icon={<CirclePlusIcon />} separator={false}>
                   Add New Tag
                 </SectionTitle>
                 <FormLayout containerPadding={false} withBorders={false}>
@@ -294,14 +294,14 @@ const AddTagModal = ({
                     <Button
                       id={"clear"}
                       type="button"
-                      variant="regular"
+                      
                       color="primary"
                       onClick={resetForm}
                       label={"Clear"}
                     />
                     <Button
                       type="submit"
-                      variant="callAction"
+                      
                       disabled={
                         newLabel.trim() === "" ||
                         newKey.trim() === "" ||

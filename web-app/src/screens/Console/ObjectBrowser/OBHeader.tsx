@@ -35,7 +35,7 @@ import { AppState, useAppDispatch } from "../../../store";
 import FilterObjectsSB from "./FilterObjectsSB";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import ObjectManagerButton from "../Common/ObjectManager/ObjectManagerButton";
-import HelpMenu from "../HelpMenu";
+// ...existing code...
 import { setHelpName } from "../../../systemSlice";
 
 interface IOBHeader {
@@ -158,7 +158,7 @@ const OBHeader = ({ bucketName }: IOBHeader) => {
                   />
                 </TooltipWrapper>
               </SecureComponent>
-              <HelpMenu />
+              {/* HelpMenu removed */}
             </Fragment>
           }
           middleComponent={searchBar}

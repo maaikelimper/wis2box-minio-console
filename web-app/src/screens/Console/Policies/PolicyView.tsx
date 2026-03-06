@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useState } from "react";
-import { DisabledIcon, EnabledIcon, Box, Grid, HelpTip } from "mds";
+import { CircleXIcon, CircleCheckIcon, Box, Grid, HelpTip } from "mds";
 import SearchBox from "../Common/SearchBox";
 import { STATUS_COLORS } from "../Dashboard/BasicDashboard/Utils";
 import { IAMStatement } from "./types";
@@ -145,7 +145,7 @@ const PolicyView = ({
                       },
                     }}
                   >
-                    {isAllow ? <EnabledIcon /> : <DisabledIcon />}
+                    {isAllow ? <CircleCheckIcon /> : <CircleXIcon />}
                     {effect}
                   </Box>
                 </Box>

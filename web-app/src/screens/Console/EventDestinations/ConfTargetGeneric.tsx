@@ -17,7 +17,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import {
   CommentBox,
-  ConsoleIcon,
+  SettingsIcon,
   FormLayout,
   Grid,
   InputBox,
@@ -116,7 +116,7 @@ const ConfTargetGeneric = ({
                   tooltip={`This value is set from the ${override.overrideEnv} environment variable`}
                   placement={"left"}
                 >
-                  <ConsoleIcon style={{ width: 20 }} />
+                  <SettingsIcon style={{ width: 20 }} />
                 </Tooltip>
               </Grid>
             }

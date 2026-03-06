@@ -18,7 +18,7 @@ import React, { useState } from "react";
 import {
   Box,
   Button,
-  ChangePasswordIcon,
+  LockIcon,
   FormLayout,
   InputBox,
   ProgressBar,
@@ -106,7 +106,7 @@ const ChangeUserPassword = ({
         setReNewPassword("");
         closeModal();
       }}
-      titleIcon={<ChangePasswordIcon />}
+      titleIcon={<LockIcon />}
     >
       <form
         noValidate
@@ -143,7 +143,7 @@ const ChangeUserPassword = ({
             <Button
               id={"save-user-password"}
               type="submit"
-              variant="callAction"
+              
               color="primary"
               disabled={
                 loading ||

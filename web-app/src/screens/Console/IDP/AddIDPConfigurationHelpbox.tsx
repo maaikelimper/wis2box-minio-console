@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment } from "react";
-import { HelpIconFilled, Box } from "mds";
+import { InfoIcon, Box } from "mds";
 
 interface IContent {
   icon: React.ReactNode;
@@ -90,7 +90,7 @@ const AddIDPConfigurationHelpBox = ({
           },
         }}
       >
-        <HelpIconFilled />
+        <InfoIcon />
         <div>{helpText}</div>
       </Box>
       <Box sx={{ fontSize: "14px", marginBottom: "15px" }}>

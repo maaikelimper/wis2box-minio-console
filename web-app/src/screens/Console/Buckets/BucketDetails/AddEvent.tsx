@@ -19,7 +19,7 @@ import {
   Autocomplete,
   Button,
   DataTable,
-  EventSubscriptionIcon,
+  BellIcon,
   Grid,
   InputBox,
 } from "mds";
@@ -146,7 +146,7 @@ const AddEvent = ({
         closeModalAndRefresh();
       }}
       title="Subscribe To Bucket Events"
-      titleIcon={<EventSubscriptionIcon />}
+      titleIcon={<BellIcon />}
     >
       <form
         noValidate
@@ -226,7 +226,7 @@ const AddEvent = ({
             <Button
               id={"cancel-add-event"}
               type="button"
-              variant="regular"
+              
               disabled={addLoading}
               onClick={() => {
                 closeModalAndRefresh();
@@ -236,7 +236,7 @@ const AddEvent = ({
             <Button
               id={"save-event"}
               type="submit"
-              variant="callAction"
+              
               disabled={addLoading || arn === "" || selectedEvents.length === 0}
               label={"Save"}
             />

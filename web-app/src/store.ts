@@ -27,10 +27,8 @@ import consoleReducer from "./screens/Console/consoleSlice";
 import addBucketsReducer from "./screens/Console/Buckets/ListBuckets/AddBucket/addBucketsSlice";
 import bucketDetailsReducer from "./screens/Console/Buckets/BucketDetails/bucketDetailsSlice";
 import objectBrowserReducer from "./screens/Console/ObjectBrowser/objectBrowserSlice";
-import dashboardReducer from "./screens/Console/Dashboard/dashboardSlice";
 import createUserReducer from "./screens/Console/Users/AddUsersSlice";
-import licenseReducer from "./screens/Console/License/licenseSlice";
-import registerReducer from "./screens/Console/Support/registerSlice";
+// import licenseReducer from "./screens/Console/License/licenseSlice";
 import destinationSlice from "./screens/Console/EventDestinations/destinationsSlice";
 import { objectBrowserWSMiddleware } from "./websockets/objectBrowserWSMiddleware";
 
@@ -50,14 +48,14 @@ const rootReducer = combineReducers({
   dashboard: dashboardReducer,
   register: registerReducer,
   createUser: createUserReducer,
-  license: licenseReducer,
+  // license: licenseReducer,
   destination: destinationSlice,
 });
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(objectBrowserWSMiddleware(objectsWS)),
+    getDefaultMiddleware(),
 });
 
 if (process.env.NODE_ENV !== "production" && module.hot) {

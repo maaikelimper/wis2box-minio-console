@@ -17,8 +17,8 @@
 import React, { useState } from "react";
 import {
   Button,
-  InspectMenuIcon,
-  PasswordKeyIcon,
+  MenuIcon,
+  LockIcon,
   Switch,
   Grid,
   Box,
@@ -30,7 +30,7 @@ import {
 } from "../../../../../../common/utils";
 import ModalWrapper from "../../../../Common/ModalWrapper/ModalWrapper";
 import { modalStyleUtils } from "../../../../Common/FormComponents/common/styleLibrary";
-import KeyRevealer from "../../../../Tools/KeyRevealer";
+
 import { setErrorSnackMessage } from "../../../../../../systemSlice";
 import { useAppDispatch } from "../../../../../../store";
 
@@ -110,7 +110,7 @@ const InspectObject = ({
       {!decryptionKey && (
         <ModalWrapper
           modalOpen={inspectOpen}
-          titleIcon={<InspectMenuIcon />}
+          titleIcon={<MenuIcon />}
           title={`Inspect Object`}
           onClose={onClose}
         >
@@ -138,7 +138,7 @@ const InspectObject = ({
               <Button
                 id={"inspect"}
                 type="submit"
-                variant="callAction"
+                
                 color="primary"
                 onClick={performInspect}
                 label={"Inspect"}
@@ -152,7 +152,7 @@ const InspectObject = ({
           modalOpen={inspectOpen}
           title="Inspect Decryption Key"
           onClose={onCloseDecKeyModal}
-          titleIcon={<PasswordKeyIcon />}
+          titleIcon={<LockIcon />}
         >
           <Box>
             This will be displayed only once. It cannot be recovered.
@@ -160,7 +160,7 @@ const InspectObject = ({
             Use secure medium to share this key.
           </Box>
           <Box>
-            <KeyRevealer value={decryptionKey} />
+            NOT SUPPORTED
           </Box>
         </ModalWrapper>
       ) : null}

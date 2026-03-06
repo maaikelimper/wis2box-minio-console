@@ -16,8 +16,8 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import {
-  AccountIcon,
-  AddIcon,
+  UsersIcon,
+  ActivityIcon,
   Box,
   Button,
   DataTable,
@@ -25,7 +25,7 @@ import {
   Grid,
   HelpBox,
   PageLayout,
-  PasswordKeyIcon,
+  LockIcon,
 } from "mds";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -44,7 +44,7 @@ import TooltipWrapper from "../Common/TooltipWrapper/TooltipWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import { api } from "api";
 import { errorToHandler } from "api/errors";
-import HelpMenu from "../HelpMenu";
+//import HelpMenu from "../HelpMenu";
 import { ACCOUNT_TABLE_COLUMNS } from "./AccountUtils";
 import { useAppDispatch } from "store";
 import { ServiceAccounts } from "api/consoleApi";
@@ -213,7 +213,7 @@ const Account = () => {
         open={changePasswordModalOpen}
         closeModal={() => setChangePasswordModalOpen(false)}
       />
-      <PageHeaderWrapper label="Access Keys" actions={<HelpMenu />} />
+      <PageHeaderWrapper label="Access Keys"  />
 
       <PageLayout>
         <Grid container>
@@ -253,8 +253,8 @@ const Account = () => {
                   id={"change-password"}
                   onClick={() => setChangePasswordModalOpen(true)}
                   label={`Change Password`}
-                  icon={<PasswordKeyIcon />}
-                  variant={"regular"}
+                  icon={<LockIcon />}
+                  
                   disabled={userIDP}
                 />
               </SecureComponent>
@@ -270,8 +270,8 @@ const Account = () => {
                     navigate(`${IAM_PAGES.ACCOUNT_ADD}`);
                   }}
                   label={`Create access key`}
-                  icon={<AddIcon />}
-                  variant={"callAction"}
+                  icon={<ActivityIcon />}
+                  
                 />
               </SecureComponent>
             </Box>
@@ -292,7 +292,7 @@ const Account = () => {
           <Grid item xs={12} sx={{ marginTop: 15 }}>
             <HelpBox
               title={"Learn more about ACCESS KEYS"}
-              iconComponent={<AccountIcon />}
+              // iconComponent={<UsersIcon />}
               help={
                 <Fragment>
                   MinIO access keys are child identities of an authenticated
@@ -304,15 +304,6 @@ const Account = () => {
                   subset of actions and resources available to the parent user.
                   <br />
                   <br />
-                  You can learn more at our{" "}
-                  <a
-                    href="https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html?ref=con#id3"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    documentation
-                  </a>
-                  .
                 </Fragment>
               }
             />

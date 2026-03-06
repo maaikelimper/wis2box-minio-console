@@ -21,12 +21,11 @@ import {
   DropdownSelector,
   Grid,
   InputBox,
-  LockFilledIcon,
-  LogoutIcon,
-  PasswordKeyIcon,
+  LockIcon,
+  LogOutIcon,
   ProgressBar,
   Select,
-  UserFilledIcon,
+  UsersIcon,
 } from "mds";
 import {
   setAccessKey,
@@ -78,7 +77,7 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
     ssoOptions = redirectRules.map((r) => ({
       label: `${r.displayName}${r.serviceType ? ` - ${r.serviceType}` : ""}`,
       value: r.redirect,
-      icon: <LogoutIcon />,
+      icon: <LogOutIcon />,
     }));
 
     selectOptions = [
@@ -120,7 +119,6 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
           <Box sx={{ marginBottom: 40 }}>
             <Button
               id={"SSOSelector"}
-              variant={"subAction"}
               label={
                 redirectRules.length === 1
                   ? `${redirectRules[0].displayName}${
@@ -181,7 +179,7 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
                   name="accessKey"
                   autoComplete="username"
                   disabled={loginSending}
-                  startIcon={<UserFilledIcon />}
+                  startIcon={<UsersIcon />}
                 />
               </Grid>
               <Grid item xs={12} sx={{ marginBottom: useSTS ? 14 : 0 }}>
@@ -197,7 +195,7 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
                   autoComplete="current-password"
                   disabled={loginSending}
                   placeholder={useSTS ? "STS Secret" : "Password"}
-                  startIcon={<LockFilledIcon />}
+                  startIcon={<LockIcon />}
                 />
               </Grid>
               {useSTS && (
@@ -213,7 +211,7 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
                     name="STS"
                     autoComplete="sts"
                     disabled={loginSending}
-                    startIcon={<PasswordKeyIcon />}
+                    startIcon={<LockIcon />}
                   />
                 </Grid>
               )}
@@ -229,7 +227,7 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
             >
               <Button
                 type="submit"
-                variant="callAction"
+                
                 color="primary"
                 id="do-login"
                 disabled={

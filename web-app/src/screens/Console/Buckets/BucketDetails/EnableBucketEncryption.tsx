@@ -17,9 +17,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 
 import {
-  AddIcon,
+  ActivityIcon,
   Box,
-  BucketEncryptionIcon,
+  // BucketEncryptionIcon,
   Button,
   FormLayout,
   Grid,
@@ -150,7 +150,7 @@ const EnableBucketEncryption = ({
           closeModalAndRefresh();
         }}
         title="Enable Bucket Encryption"
-        titleIcon={<BucketEncryptionIcon />}
+        // titleIcon removed: BucketEncryptionIcon no longer available
       >
         <form
           noValidate
@@ -210,8 +210,8 @@ const EnableBucketEncryption = ({
                   <TooltipWrapper tooltip={"Add key"}>
                     <Button
                       id={"import-key"}
-                      variant={"regular"}
-                      icon={<AddIcon />}
+                      
+                      icon={<ActivityIcon />}
                       onClick={(e) => {
                         setAddOpen(true);
                         e.preventDefault();
@@ -225,7 +225,7 @@ const EnableBucketEncryption = ({
               <Button
                 id={"cancel"}
                 type="submit"
-                variant="regular"
+                
                 onClick={() => {
                   closeModalAndRefresh();
                 }}
@@ -235,7 +235,7 @@ const EnableBucketEncryption = ({
               <Button
                 id={"save"}
                 type="submit"
-                variant="callAction"
+                
                 disabled={loading}
                 label={"Save"}
               />

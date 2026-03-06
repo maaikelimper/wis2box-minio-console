@@ -25,10 +25,10 @@ import React, {
 import get from "lodash/get";
 import debounce from "lodash/debounce";
 import {
-  AddIcon,
+  ActivityIcon,
   Box,
   Grid,
-  HelpIcon,
+  HandHelpingIcon,
   InputBox,
   InputLabel,
   Tooltip,
@@ -192,7 +192,7 @@ const QueryMultiSelector = ({
           onChange={onChangeValue}
           index={index}
           placeholder={valuePlaceholder}
-          overlayIcon={index === currentValues.length - 1 ? <AddIcon /> : null}
+          overlayIcon={index === currentValues.length - 1 ? <ActivityIcon /> : null}
           overlayAction={() => {
             addEmptyLine();
           }}
@@ -232,7 +232,7 @@ const QueryMultiSelector = ({
               }}
             >
               <Tooltip tooltip={tooltip} placement="top">
-                <HelpIcon style={{ width: 13, height: 13 }} />
+                <HandHelpingIcon style={{ width: 13, height: 13 }} />
               </Tooltip>
             </Box>
           )}

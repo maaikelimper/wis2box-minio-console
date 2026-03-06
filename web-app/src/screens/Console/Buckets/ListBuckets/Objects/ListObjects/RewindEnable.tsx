@@ -122,7 +122,7 @@ const RewindEnable = ({
         <Grid item xs={12} sx={modalStyleUtils.modalButtonBar}>
           <Button
             type="button"
-            variant="callAction"
+            
             disabled={rewindEnabling || (!dateSelected && rewindEnableButton)}
             onClick={rewindApply}
             id={"rewind-apply-button"}

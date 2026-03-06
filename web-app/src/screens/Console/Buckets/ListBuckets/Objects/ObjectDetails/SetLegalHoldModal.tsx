@@ -119,14 +119,14 @@ const SetLegalHoldModal = ({
             <Button
               id={"clear"}
               type="button"
-              variant="regular"
+              
               onClick={resetForm}
               label={"Clear"}
             />
             <Button
               id={"save"}
               type="submit"
-              variant="callAction"
+              
               disabled={isSaving}
               label={" Save"}
             />

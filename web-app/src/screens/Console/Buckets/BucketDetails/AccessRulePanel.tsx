@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useEffect, useState } from "react";
-import { AddIcon, Button, DataTable, SectionTitle, HelpTip } from "mds";
+import { ActivityIcon, Button, DataTable, SectionTitle, HelpTip } from "mds";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { api } from "api";
@@ -187,8 +187,8 @@ const AccessRule = () => {
                   setAddAccessRuleOpen(true);
                 }}
                 label={"Add Access Rule"}
-                icon={<AddIcon />}
-                variant={"callAction"}
+                icon={<ActivityIcon />}
+                
               />
             </TooltipWrapper>
           </SecureComponent>

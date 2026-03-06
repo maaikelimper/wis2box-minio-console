@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useState } from "react";
-import { ConfirmDeleteIcon } from "mds";
+import { DeleteIcon } from "mds";
 import { setErrorSnackMessage } from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import { api } from "api";
@@ -63,7 +63,7 @@ const DeleteAccessRule = ({
       isOpen={modalOpen}
       isLoading={loadingDeleteAccessRule}
       onConfirm={onConfirmDelete}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       onClose={onClose}
       confirmationContent={
         <Fragment>Are you sure you want to delete this access rule?</Fragment>

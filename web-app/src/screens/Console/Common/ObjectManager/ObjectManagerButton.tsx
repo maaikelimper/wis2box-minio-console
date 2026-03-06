@@ -17,7 +17,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import get from "lodash/get";
-import { Button, CircleIcon, ObjectManagerIcon } from "mds";
+import { Button, CircleIcon, SettingsIcon } from "mds";
 import { useSelector } from "react-redux";
 import { toggleList } from "../../ObjectBrowser/objectBrowserSlice";
 import { AppState, useAppDispatch } from "../../../../store";
@@ -89,7 +89,7 @@ const ObjectManagerButton = () => {
               >
                 <CircleIcon />
               </IndicatorContainer>
-              <ObjectManagerIcon
+              <SettingsIcon
                 style={{ width: 20, height: 20, marginTop: -2 }}
               />
             </Fragment>

@@ -16,7 +16,7 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import ConfirmDialog from "../../../../Common/ModalWrapper/ConfirmDialog";
-import { ConfirmDeleteIcon, Switch } from "mds";
+import { DeleteIcon, Switch } from "mds";
 import { setErrorSnackMessage } from "../../../../../../systemSlice";
 import { AppState, useAppDispatch } from "../../../../../../store";
 import { hasPermission } from "../../../../../../common/SecureComponent";
@@ -104,7 +104,7 @@ const DeleteObject = ({
       title={`Delete Selected Versions`}
       confirmText={"Delete"}
       isOpen={deleteOpen}
-      titleIcon={<ConfirmDeleteIcon />}
+      titleIcon={<DeleteIcon />}
       isLoading={deleteLoading}
       onConfirm={onConfirmDelete}
       onClose={onClose}

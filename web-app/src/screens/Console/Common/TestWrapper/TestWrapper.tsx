@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React, { Fragment, useEffect, useState } from "react";
-import { DrivesIcon, Loader, SectionTitle, VersionIcon, Grid } from "mds";
+import { HardDriveIcon, Loader, SectionTitle, InfoIcon, Grid } from "mds";
 import { api } from "api";
 import { ServerProperties } from "api/consoleApi";
 
@@ -96,7 +96,7 @@ const TestWrapper = ({ title, children }: ITestWrapper) => {
                     },
                   }}
                 >
-                  <DrivesIcon /> <strong>{totalNodes}</strong>
+                  <HardDriveIcon /> <strong>{totalNodes}</strong>
                   &nbsp;nodes,&nbsp;
                   <strong>{totalDrives}</strong>&nbsp; drives
                 </Grid>
@@ -117,7 +117,7 @@ const TestWrapper = ({ title, children }: ITestWrapper) => {
                       marginRight: 20,
                     }}
                   >
-                    <VersionIcon />
+                    <InfoIcon />
                   </span>{" "}
                   MinIO VERSION&nbsp;<strong>{version}</strong>
                 </Grid>

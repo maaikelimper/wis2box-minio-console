@@ -33,7 +33,7 @@ import STResults from "./STResults";
 import ProgressBarWrapper from "../Common/ProgressBarWrapper/ProgressBarWrapper";
 import InputUnitMenu from "../Common/FormComponents/InputUnitMenu/InputUnitMenu";
 import DistributedOnly from "../Common/DistributedOnly/DistributedOnly";
-import RegisterCluster from "../Support/RegisterCluster";
+
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
 import { SecureComponent } from "../../../common/SecureComponent";
@@ -62,7 +62,7 @@ const Speedtest = () => {
   const [currentValue, setCurrentValue] = useState<number>(0);
   const [totalSeconds, setTotalSeconds] = useState<number>(0);
   const [speedometerValue, setSpeedometerValue] = useState<number>(0);
-  const clusterRegistered = registeredCluster();
+  const clusterRegistered = 0;
 
   useEffect(() => {
     // begin watch if bucketName in bucketList and start pressed
@@ -174,7 +174,6 @@ const Speedtest = () => {
       <PageHeaderWrapper label="Performance" actions={<HelpMenu />} />
 
       <PageLayout>
-        {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (
           <DistributedOnly
             iconComponent={<SpeedtestIcon />}

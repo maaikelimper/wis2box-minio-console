@@ -44,7 +44,7 @@ import { registeredCluster } from "../../../config";
 import ModalWrapper from "../Common/ModalWrapper/ModalWrapper";
 import DistributedOnly from "../Common/DistributedOnly/DistributedOnly";
 import KeyRevealer from "./KeyRevealer";
-import RegisterCluster from "../Support/RegisterCluster";
+
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
 
@@ -103,7 +103,7 @@ const Inspect = () => {
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [volumeError, setVolumeError] = useState<string>("");
   const [pathError, setPathError] = useState<string>("");
-  const clusterRegistered = registeredCluster();
+  const clusterRegistered = 0;
   /**
    * Validation Effect
    */
@@ -194,7 +194,6 @@ const Inspect = () => {
       <PageHeaderWrapper label={"Inspect"} actions={<HelpMenu />} />
 
       <PageLayout>
-        {!clusterRegistered && <RegisterCluster compactMode />}
         {!distributedSetup ? (
           <DistributedOnly
             iconComponent={<InspectMenuIcon />}

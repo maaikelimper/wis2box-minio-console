@@ -64,7 +64,6 @@ const HelpMenuContainer = styled.div(({ theme }) => ({
 }));
 
 const HelpMenu = () => {
-  const helpTopics = require("../Console/helpTopics.json");
 
   const [helpItems, setHelpItems] = useState<DocItem[]>([]);
   const [headerDocs, setHeaderDocs] = useState<string | null>(null);
@@ -109,68 +108,10 @@ const HelpMenu = () => {
     let docsTotal = 0;
     let blogTotal = 0;
     let videoTotal = 0;
-    if (helpTopics[systemHelpName]) {
-      if (helpTopics[systemHelpName]["docs"]) {
-        setHeaderDocs(helpTopics[systemHelpName]["docs"]["header"]);
-        setHelpItems(helpTopics[systemHelpName]["docs"]["links"]);
-        docsTotal = helpTopics[systemHelpName]["docs"]["links"].length;
-      }
-
-      if (helpTopics[systemHelpName]["blog"]) {
-        setHeaderBlog(helpTopics[systemHelpName]["blog"]["header"]);
-        setHelpItemsBlog(helpTopics[systemHelpName]["blog"]["links"]);
-        blogTotal = helpTopics[systemHelpName]["blog"]["links"].length;
-      }
-
-      if (helpTopics[systemHelpName]["video"]) {
-        setHeaderVideo(helpTopics[systemHelpName]["video"]["header"]);
-        setHelpItemsVideo(helpTopics[systemHelpName]["video"]["links"]);
-        videoTotal = helpTopics[systemHelpName]["video"]["links"].length;
-      }
-
-      let autoSelect = "docs";
-      let hadToFlip = false;
-      // if no docs, eval video o blog
-      if (docsTotal === 0 && headerDocs === null && helpTabName === "docs") {
-        // if no blog, default video?
-        if (videoTotal !== 0 || headerVideo !== null) {
-          autoSelect = "video";
-        } else {
-          autoSelect = "blog";
-        }
-        hadToFlip = true;
-      }
-      if (videoTotal === 0 && headerVideo === null && helpTabName === "video") {
-        // if no blog, default video?
-        if (docsTotal !== 0 || headerDocs !== null) {
-          autoSelect = "docs";
-        } else {
-          autoSelect = "blog";
-        }
-        hadToFlip = true;
-      }
-      if (blogTotal === 0 && headerBlog === null && helpTabName === "blog") {
-        // if no blog, default video?
-        if (docsTotal !== 0 || headerDocs !== null) {
-          autoSelect = "docs";
-        } else {
-          autoSelect = "video";
-        }
-        hadToFlip = true;
-      }
-      if (hadToFlip) {
-        dispatch(setHelpTabName(autoSelect));
-      }
-    } else {
-      setHelpItems(helpTopics["help"]["docs"]["links"]);
-      setHelpItemsBlog([]);
-      setHelpItemsVideo([]);
-    }
   }, [
     systemHelpName,
     helpTabName,
     dispatch,
-    helpTopics,
     headerBlog,
     headerDocs,
     headerVideo,

@@ -477,15 +477,6 @@ const ListTiersConfiguration = () => {
                             tier.
                             <br />
                             <br />
-                            You can learn more at our{" "}
-                            <a
-                              href="https://min.io/docs/minio/linux/administration/object-management/object-lifecycle-management.html?ref=con"
-                              target="_blank"
-                              rel="noopener"
-                            >
-                              documentation
-                            </a>
-                            .
                           </Fragment>
                         }
                       />

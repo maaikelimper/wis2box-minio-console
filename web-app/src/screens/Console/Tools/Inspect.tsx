@@ -327,24 +327,6 @@ const Inspect = () => {
                         />
                       </Box>
                     </Box>
-
-                    <Box
-                      sx={{
-                        marginTop: "30px",
-                        marginLeft: "15px",
-                        fontSize: "14px",
-                      }}
-                    >
-                      You can learn more at our{" "}
-                      <a
-                        href="https://github.com/minio/minio/tree/master/docs/debugging?ref=con"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        documentation
-                      </a>
-                      .
-                    </Box>
                   </Fragment>
                 }
               />

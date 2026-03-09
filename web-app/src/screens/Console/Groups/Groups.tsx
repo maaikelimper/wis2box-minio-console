@@ -336,15 +336,6 @@ const Groups = () => {
                           user permissions on the MinIO Tenant.
                           <br />
                           <br />
-                          You can learn more at our{" "}
-                          <a
-                            href="https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html?ref=con"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            documentation
-                          </a>
-                          .
                         </Fragment>
                       }
                     />

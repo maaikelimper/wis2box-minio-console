@@ -304,15 +304,6 @@ const Account = () => {
                   subset of actions and resources available to the parent user.
                   <br />
                   <br />
-                  You can learn more at our{" "}
-                  <a
-                    href="https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html?ref=con#id3"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    documentation
-                  </a>
-                  .
                 </Fragment>
               }
             />

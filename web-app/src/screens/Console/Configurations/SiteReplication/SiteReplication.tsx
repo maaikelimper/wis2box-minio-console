@@ -223,15 +223,6 @@ const SiteReplication = () => {
                     </ActionLink>
                     .
                     <br />
-                    You can learn more at our{" "}
-                    <a
-                      href="https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html?ref=con"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      documentation
-                    </a>
-                    .
                   </Fragment>
                 }
               />
@@ -268,15 +259,6 @@ const SiteReplication = () => {
                 access to a central KMS deployment server.
                 <br />
                 <br />
-                You can learn more at our{" "}
-                <a
-                  href="https://github.com/minio/minio/tree/master/docs/site-replication?ref=con"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  documentation
-                </a>
-                .
               </Fragment>
             }
           />

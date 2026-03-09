@@ -55,10 +55,6 @@ const Login = () => {
 
   const isK8S = useSelector((state: AppState) => state.login.isK8S);
 
-  const backgroundAnimation = useSelector(
-    (state: AppState) => state.login.backgroundAnimation,
-  );
-
   useEffect(() => {
     if (navigateTo !== "") {
       dispatch(resetForm());
@@ -134,12 +130,6 @@ const Login = () => {
       );
   }
 
-  let docsURL = "https://min.io/docs/minio/linux/index.html?ref=con";
-  if (isK8S) {
-    docsURL =
-      "https://min.io/docs/minio/kubernetes/upstream/index.html?ref=con";
-  }
-
   useEffect(() => {
     dispatch(setHelpName("login"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -163,46 +153,17 @@ const Login = () => {
               },
             }}
           >
-            <a href={docsURL} target="_blank" rel="noopener">
-              Documentation
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://github.com/minio/minio"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://subnet.min.io/?ref=con"
-              target="_blank"
-              rel="noopener"
-            >
-              Support
-            </a>
-            <span className={"separator"}>|</span>
-            <a
-              href="https://min.io/download/?ref=con"
-              target="_blank"
-              rel="noopener"
-            >
-              Download
-            </a>
+            wis2box minio console
           </Box>
         }
         promoHeader={
-          <span style={{ fontSize: 28 }}>High-Performance Object Store</span>
+          <span style={{ fontSize: 28 }}>wis2box minio</span>
         }
         promoInfo={
           <span style={{ fontSize: 14, lineHeight: 1 }}>
             wis2box-minio
-            </a>
-            .
           </span>
         }
-        backgroundAnimation={backgroundAnimation}
       />
     </Fragment>
   );

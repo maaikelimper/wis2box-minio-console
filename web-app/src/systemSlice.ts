@@ -17,7 +17,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { snackBarMessage, SRInfoStateType } from "./types";
 import { ErrorResponseHandler, IEmbeddedCustomStyles } from "./common/types";
 import { AppState } from "./store";
-import { SubnetInfo } from "./screens/Console/License/types";
+
 import { isDarkModeOn } from "./utils/stylesUtils";
 
 // determine whether we have the sidebar state stored on localstorage
@@ -40,7 +40,7 @@ export interface SystemState {
   serverDiagnosticStatus: string;
   distributedSetup: boolean;
   siteReplicationInfo: SRInfoStateType;
-  licenseInfo: null | SubnetInfo;
+  licenseInfo: null ;
   overrideStyles: null | IEmbeddedCustomStyles;
   anonymousMode: boolean;
   helpName: string;
@@ -154,7 +154,7 @@ export const systemSlice = createSlice({
     setSiteReplicationInfo: (state, action: PayloadAction<SRInfoStateType>) => {
       state.siteReplicationInfo = action.payload;
     },
-    setSystemLicenseInfo: (state, action: PayloadAction<SubnetInfo | null>) => {
+    setSystemLicenseInfo: (state, action: PayloadAction<null>) => {
       state.licenseInfo = action.payload;
     },
     setHelpName: (state, action: PayloadAction<string>) => {
